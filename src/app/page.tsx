@@ -5,6 +5,7 @@ import { artistsQuery, teamQuery, siteSettingsQuery } from '@/lib/queries'
 import type { Artist, TeamMember, SiteSettings } from '@/types'
 import ArtistCard from '@/components/ArtistCard'
 import TeamCard from '@/components/TeamCard'
+import LiveSetCarousel from '@/components/LiveSetCarousel'
 
 export const revalidate = 60
 
@@ -116,27 +117,7 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <div className="relative aspect-video bg-surface-2 border border-border flex items-center justify-center group">
-              <Image
-                src="https://img.youtube.com/vi/tJHCgoROs9g/maxresdefault.jpg"
-                alt="Live Set"
-                fill
-                className="object-cover grayscale"
-              />
-              <div className="absolute inset-0 bg-black/40" />
-              <a
-                href="https://youtu.be/tJHCgoROs9g"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center group-hover:bg-white transition-colors z-10">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="group-hover:text-black ml-1">
-                    <polygon points="5,3 19,12 5,21" />
-                  </svg>
-                </div>
-              </a>
-            </div>
+            <LiveSetCarousel />
           </div>
         </div>
       </section>
