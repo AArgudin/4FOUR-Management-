@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { client } from '@/lib/sanity'
 import { artistsQuery } from '@/lib/queries'
 import type { Artist } from '@/types'
-import ArtistCard from '@/components/ArtistCard'
+import ArtistFeatureCard from '@/components/ArtistFeatureCard'
 
 export const metadata: Metadata = {
   title: 'Artists | 4FOUR MGMT',
@@ -37,21 +37,17 @@ export default async function TalentPage() {
         </div>
       </section>
 
-      {/* Artist Grid */}
+      {/* Artist List */}
       <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          {artists.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
-              {artists.map(artist => (
-                <ArtistCard key={artist._id} artist={artist} />
-              ))}
-            </div>
-          ) : (
-            <div className="py-40 text-center">
-              <p className="font-display text-4xl tracking-widest text-border mb-4">COMING SOON</p>
-              <p className="text-muted text-xs tracking-widest">Artist profiles are being set up. Check back soon.</p>
-            </div>
-          )}
+        <div className="max-w-5xl mx-auto px-6 flex flex-col gap-8">
+          {/* Add each artist below — copy this block for each new artist */}
+          <ArtistFeatureCard
+            name="Artist Name"
+            role="DJ / Producer"
+            slug="artist-slug"
+            artistImage="/artists/artist-photo.jpg"
+            logoImage="/artists/artist-logo.png"
+          />
         </div>
       </section>
     </>
