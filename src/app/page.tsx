@@ -60,15 +60,15 @@ export default async function HomePage() {
           <div className="flex flex-col md:flex-row gap-0">
             <div className="md:w-1/2 md:pr-16">
               <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-tight tracking-widest">
-                WE CULTIVATE TALENT.<br />
-                WE BUILD CAREERS.<br />
-                WE CREATE CULTURE.
+                WE CULTIVATE TALENT<br />
+                WE BUILD CAREERS<br />
+                WE CREATE CULTURE
               </h2>
             </div>
             <div className="hidden md:block w-px bg-border mx-8 self-stretch" />
             <div className="md:w-1/2 md:pl-8 flex flex-col justify-center mt-10 md:mt-0">
               <p className="text-muted-2 text-sm leading-relaxed mb-8">
-                4FOUR MGMT is a creative management and artist development company dedicated to representing visionary talent and building lasting legacies in music and beyond.
+                4FOUR Management is a premier DJ management firm specializing in the nightlife and entertainment industry. We are committed to representing exceptional talent while delivering a tailored experience to every client and venue we partner with. Our personalized approach ensures that each engagement is thoughtfully curated, aligning the right artist with the right environment to produce results that resonate. At 4FOUR Management, we bring professionalism, precision, and passion to every stage.
               </p>
               <Link href="/contact" className="inline-flex items-center gap-2 text-white text-xs tracking-widest hover:opacity-70 transition-opacity">
                 LEARN MORE <span>→</span>
