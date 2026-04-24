@@ -11,7 +11,7 @@ interface LiveSet {
 
 const sets: LiveSet[] = [
   {
-    title: 'LIVE SET 001',
+    title: 'SASH @ MCQUEENS SOCIAL LOUNGE 2025',
     youtubeUrl: 'https://youtu.be/tJHCgoROs9g',
   },
 ]
