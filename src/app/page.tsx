@@ -127,9 +127,9 @@ export default async function HomePage() {
               href={settings?.trackstackUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-border hover:border-white transition-colors duration-300 w-48 shrink-0 md:mr-32"
+              className="group border border-border hover:border-white transition-colors duration-300 w-32 shrink-0 md:mr-64"
             >
-              <div className="relative w-48 h-48 overflow-hidden">
+              <div className="relative w-32 h-32 overflow-hidden">
                 <Image
                   src="/artists/SASH/Artist-photo.jpeg"
                   alt="SASH"
