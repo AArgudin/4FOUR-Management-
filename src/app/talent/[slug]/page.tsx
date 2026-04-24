@@ -4,6 +4,7 @@ import { client } from '@/lib/sanity'
 import { artistBySlugQuery, artistsQuery } from '@/lib/queries'
 import type { Artist } from '@/types'
 import ArtistPageClient from '@/components/ArtistPageClient'
+import { getStaticArtist, staticArtists } from '@/lib/staticArtists'
 
 export const revalidate = 60
 
@@ -14,12 +15,10 @@ interface Props {
 export async function generateStaticParams() {
   try {
     const artists = await client.fetch<Artist[]>(artistsQuery)
-    return (artists || []).map(artist => ({
-      slug: artist.slug.current,
-    }))
-  } catch {
-    return []
-  }
+    const sanityParams = (artists || []).map(a => ({ slug: a.slug.current }))
+    if (sanityParams.length) return sanityParams
+  } catch {}
+  return staticArtists.map(a => ({ slug: a.slug.current }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -40,8 +39,10 @@ export default async function ArtistPage({ params }: Props) {
 
   try {
     artist = await client.fetch<Artist>(artistBySlugQuery, { slug: params.slug })
-  } catch {
-    // Sanity not configured yet, proceed to notFound
+  } catch {}
+
+  if (!artist) {
+    artist = getStaticArtist(params.slug)
   }
 
   if (!artist) {
