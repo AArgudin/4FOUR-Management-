@@ -39,8 +39,9 @@ export default async function TalentPage() {
 
       {/* Artist List */}
       <section className="py-20 bg-black">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col gap-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8">
           {/* Add each artist below — copy this block for each new artist */}
+          <div className="w-1/4 min-w-[220px]">
           <ArtistFeatureCard
             name="SASH"
             role="DJ / Producer"
@@ -48,6 +49,7 @@ export default async function TalentPage() {
             artistImage="/artists/SASH/Artist-photo.jpeg"
             logoImage="/artists/SASH/Artist-logo.png"
           />
+          </div>
         </div>
       </section>
     </>

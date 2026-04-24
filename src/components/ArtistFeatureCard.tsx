@@ -27,8 +27,8 @@ export default function ArtistFeatureCard({ name, role, slug, artistImage, logoI
         </div>
 
         {/* Right 2/3 — Artist logo */}
-        <div className="relative w-2/3 bg-surface flex items-center justify-center border-l border-border overflow-hidden">
-          <div className="relative w-3/4 h-3/4">
+        <div className="relative w-2/3 bg-surface flex items-center justify-center border-l border-border overflow-hidden p-4">
+          <div className="relative w-full h-full">
             <Image
               src={logoImage}
               alt={`${name} logo`}

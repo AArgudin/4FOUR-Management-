@@ -88,7 +88,7 @@ export default async function HomePage() {
               VIEW ALL ARTISTS <span>→</span>
             </Link>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 w-1/4">
             <ArtistFeatureCard
               name="SASH"
               role="DJ / Producer"
