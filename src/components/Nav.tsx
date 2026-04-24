@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
@@ -51,36 +52,32 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [pathname])
+  useEffect(() => { setMenuOpen(false) }, [pathname])
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm border-b border-border' : 'bg-black'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="font-display text-2xl tracking-widest text-white hover:opacity-80 transition-opacity">
-            4FOUR MGMT
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-16">
+          {/* Logo - left */}
+          <Link href="/" className="hover:opacity-75 transition-opacity justify-self-start">
+            <Image src="/logo.png" alt="4FOUR MGMT" width={72} height={72} className="invert" priority />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Nav links - center */}
+          <nav className="hidden lg:flex items-center justify-center gap-8">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs tracking-widest font-medium transition-colors duration-200 ${
-                  pathname === link.href ? 'text-white' : 'text-muted hover:text-white'
+                className={`text-xs tracking-widest font-medium transition-colors duration-200 relative pb-1 ${
+                  pathname === link.href
+                    ? 'text-white after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-white'
+                    : 'text-muted hover:text-white'
                 }`}
               >
                 {link.label}
@@ -88,8 +85,8 @@ export default function Nav() {
             ))}
           </nav>
 
-          {/* Social Icons - Desktop */}
-          <div className="hidden lg:flex items-center gap-5">
+          {/* Social icons - right */}
+          <div className="hidden lg:flex items-center justify-end gap-5">
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
@@ -101,9 +98,9 @@ export default function Nav() {
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile hamburger */}
           <button
-            className="lg:hidden text-white p-1"
+            className="lg:hidden text-white p-1 justify-self-end"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -112,12 +109,12 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* Mobile Full-Screen Overlay */}
+      {/* Mobile overlay */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black flex flex-col">
           <div className="h-16 flex items-center justify-between px-6 border-b border-border">
-            <Link href="/" className="font-display text-2xl tracking-widest text-white">
-              4FOUR MGMT
+            <Link href="/">
+              <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} className="invert" />
             </Link>
             <button onClick={() => setMenuOpen(false)} className="text-white p-1" aria-label="Close menu">
               <X size={22} />

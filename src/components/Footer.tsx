@@ -1,7 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
-  { href: '/', label: 'HOME' },
   { href: '/talent', label: 'ARTISTS' },
   { href: '/live-sets', label: 'LIVE SETS' },
   { href: '/trackstack', label: 'TRACKSTACK' },
@@ -37,46 +37,57 @@ function YouTubeIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-border py-16">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-10">
-        {/* Logo */}
-        <Link href="/" className="font-display text-4xl tracking-widest text-white hover:opacity-70 transition-opacity">
-          4FOUR MGMT
-        </Link>
-
-        {/* Nav Links */}
-        <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-xs tracking-widest text-muted hover:text-white transition-colors"
-            >
-              {link.label}
+    <footer className="bg-black border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6">
+          {/* Left — contact */}
+          <div>
+            <h3 className="font-display text-2xl tracking-widest text-white mb-4">LET&apos;S CONNECT</h3>
+            <p className="text-muted text-xs tracking-wider mb-3">For General Information &amp; Collabs:</p>
+            <p className="text-muted-2 text-sm mb-1">4four.mgmt@gmail.com</p>
+            <p className="text-muted-2 text-sm mb-8">AJ@4fourmgmt.com</p>
+            <Link href="/contact" className="btn-primary inline-flex items-center gap-2 text-xs px-6 py-3">
+              CONTACT US →
             </Link>
-          ))}
-        </nav>
+          </div>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-6">
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
-            <InstagramIcon />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">
-            <SoundCloudIcon />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="YouTube">
-            <YouTubeIcon />
-          </a>
+          {/* Center — logo + social */}
+          <div className="flex flex-col items-center justify-center gap-6">
+            <Link href="/" className="hover:opacity-75 transition-opacity">
+              <Image src="/logo.png" alt="4FOUR MGMT" width={120} height={120} className="invert" />
+            </Link>
+            <div className="flex items-center gap-6">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
+                <InstagramIcon />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">
+                <SoundCloudIcon />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="YouTube">
+                <YouTubeIcon />
+              </a>
+            </div>
+          </div>
+
+          {/* Right — nav links */}
+          <div className="flex flex-col gap-3 md:items-end justify-center">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs tracking-widest text-muted hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
-        {/* Divider */}
-        <div className="w-full border-t border-border" />
-
-        {/* Copyright */}
-        <p className="text-muted text-xs tracking-widest text-center">
-          © {new Date().getFullYear()} 4FOUR MGMT. All rights reserved.
-        </p>
+        <div className="mt-12 pt-8 border-t border-border text-center">
+          <p className="text-muted text-xs tracking-widest">
+            © {new Date().getFullYear()} 4FOUR MGMT. ALL RIGHTS RESERVED.
+          </p>
+        </div>
       </div>
     </footer>
   )
