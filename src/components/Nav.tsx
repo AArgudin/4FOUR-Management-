@@ -62,10 +62,10 @@ export default function Nav() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-16">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-20">
           {/* Logo - left */}
           <Link href="/" className="hover:opacity-75 transition-opacity justify-self-start">
-            <Image src="/logo.png" alt="4FOUR MGMT" width={72} height={72} className="invert" priority />
+            <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} priority />
           </Link>
 
           {/* Nav links - center */}
@@ -112,9 +112,9 @@ export default function Nav() {
       {/* Mobile overlay */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black flex flex-col">
-          <div className="h-16 flex items-center justify-between px-6 border-b border-border">
+          <div className="h-20 flex items-center justify-between px-6 border-b border-border">
             <Link href="/">
-              <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} className="invert" />
+              <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} />
             </Link>
             <button onClick={() => setMenuOpen(false)} className="text-white p-1" aria-label="Close menu">
               <X size={22} />
