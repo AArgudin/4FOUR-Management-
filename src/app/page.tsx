@@ -49,9 +49,7 @@ export default async function HomePage() {
           <p className="text-muted text-xs md:text-sm tracking-[0.35em] uppercase">
             MANAGING THE FUTURE OF HOUSE
           </p>
-          <div className="flex flex-col items-center gap-2 mt-2 text-muted">
-            <span className="text-base">↓</span>
-          </div>
+
         </div>
       </section>
 
