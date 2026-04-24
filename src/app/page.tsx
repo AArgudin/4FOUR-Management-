@@ -23,14 +23,13 @@ async function getData() {
 }
 
 export default async function HomePage() {
-  const { artists, team, settings } = await getData()
-  const featuredArtists = artists.slice(0, 4)
+  const { team, settings } = await getData()
   const featuredTeam = team.slice(0, 4)
 
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20 -mt-12">
+      <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20 -mt-12">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-0 right-0 h-px bg-border opacity-20" />
           <div className="absolute bottom-1/4 left-0 right-0 h-px bg-border opacity-20" />
@@ -50,12 +49,11 @@ export default async function HomePage() {
           <p className="text-muted text-xs md:text-sm tracking-[0.35em] uppercase">
             MANAGING THE FUTURE OF HOUSE
           </p>
-
         </div>
       </section>
 
-      {/* ── MISSION ── */}
-      <section className="py-24 md:py-32 bg-black border-t border-border">
+      {/* ── ABOUT ── */}
+      <section id="about" className="py-24 md:py-32 bg-black border-t border-border">
         <div className="max-w-6xl mx-auto px-6">
           <p className="section-label mb-6">Our Mission</p>
           <div className="flex flex-col md:flex-row gap-0">
@@ -71,23 +69,15 @@ export default async function HomePage() {
               <p className="text-muted-2 text-sm leading-relaxed mb-8">
                 4FOUR Management is a premier DJ management firm specializing in the nightlife and entertainment industry. We are committed to representing exceptional talent while delivering a tailored experience to every client and venue we partner with. Our personalized approach ensures that each engagement is thoughtfully curated, aligning the right artist with the right environment to produce results that resonate. At 4FOUR Management, we bring professionalism, precision, and passion to every stage.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-white text-xs tracking-widest hover:opacity-70 transition-opacity">
-                LEARN MORE <span>→</span>
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED ARTISTS ── */}
-      <section className="py-20 bg-black border-t border-border">
+      {/* ── ARTISTS ── */}
+      <section id="artists" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-10">
-            <p className="text-xs tracking-[0.3em] text-muted uppercase">Featured Artists</p>
-            <Link href="/talent" className="text-xs tracking-widest text-muted hover:text-white transition-colors inline-flex items-center gap-2">
-              VIEW ALL ARTISTS <span>→</span>
-            </Link>
-          </div>
+          <p className="section-label mb-10">Roster</p>
           <div className="flex flex-col gap-4 w-1/4">
             <ArtistFeatureCard
               name="SASH"
@@ -101,8 +91,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── LIVE SET HIGHLIGHT ── */}
-      <section className="py-20 bg-black border-t border-border">
+      {/* ── LIVE SETS ── */}
+      <section id="live-sets" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -113,26 +103,42 @@ export default async function HomePage() {
               <p className="text-muted-2 text-sm leading-relaxed mb-10 max-w-sm">
                 Watch our latest live sets featuring 4FOUR MGMT artists.
               </p>
-              <Link href="/live-sets" className="btn-primary">
-                WATCH NOW →
-              </Link>
             </div>
-
             <LiveSetCarousel />
           </div>
         </div>
       </section>
 
-      {/* ── TEAM ── */}
-      {featuredTeam.length > 0 && (
-        <section className="py-20 bg-black border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-between mb-10">
-              <p className="text-xs tracking-[0.3em] text-muted uppercase">Our Team</p>
-              <Link href="/team" className="text-xs tracking-widest text-muted hover:text-white transition-colors inline-flex items-center gap-2">
-                MEET THE TEAM <span>→</span>
-              </Link>
+      {/* ── TRACKSTACK ── */}
+      <section id="trackstack" className="py-24 bg-black border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+            <div>
+              <p className="section-label mb-4">Track Catalog</p>
+              <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-tight tracking-widest mb-4">
+                TRACKSTACK
+              </h2>
+              <p className="text-muted-2 text-sm leading-relaxed max-w-md">
+                Explore our artists&apos; full track catalog on Trackstack.
+              </p>
             </div>
+            <a
+              href={settings?.trackstackUrl || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm px-10 py-4 self-start md:self-center"
+            >
+              Open Trackstack →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TEAM ── */}
+      <section id="team" className="py-20 bg-black border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="section-label mb-10">The Team</p>
+          {featuredTeam.length > 0 ? (
             <div className="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 md:divide-x divide-border border border-border">
               {featuredTeam.map(member => (
                 <div key={member._id} className="flex-1 min-w-[200px]">
@@ -140,21 +146,30 @@ export default async function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          ) : (
+            <p className="text-muted text-xs tracking-widest">Team profiles coming soon.</p>
+          )}
+        </div>
+      </section>
 
-      {/* ── CTA STRIP ── */}
-      <section className="py-20 bg-black border-t border-border">
+      {/* ── CONTACT ── */}
+      <section id="contact" className="py-24 bg-black border-t border-border">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-widest mb-6">
-            LET&apos;S BUILD TOGETHER
+          <p className="section-label mb-4">Get In Touch</p>
+          <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-widest mb-10">
+            LET&apos;S CONNECT
           </h2>
-          <p className="text-muted text-sm tracking-wider mb-10">
-            Ready to elevate your career? We want to hear from you.
-          </p>
-          <Link href="/contact" className="btn-primary text-base px-10 py-4">
-            Get In Touch →
+          <p className="text-muted text-xs tracking-widest mb-6">For General Information &amp; Collabs:</p>
+          <div className="flex flex-col items-center gap-4 mb-10">
+            <a href="mailto:management@4fourmgmt.com" className="text-white text-lg tracking-widest hover:text-muted transition-colors">
+              management@4fourmgmt.com
+            </a>
+            <a href="mailto:AJ@4fourmgmt.com" className="text-white text-lg tracking-widest hover:text-muted transition-colors">
+              AJ@4fourmgmt.com
+            </a>
+          </div>
+          <Link href="/contact" className="btn-primary px-10 py-4">
+            Full Contact Page →
           </Link>
         </div>
       </section>

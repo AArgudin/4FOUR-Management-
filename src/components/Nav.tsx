@@ -7,13 +7,13 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { href: '/', label: 'HOME' },
-  { href: '/about', label: 'ABOUT US' },
-  { href: '/talent', label: 'ARTISTS' },
-  { href: '/live-sets', label: 'LIVE SETS' },
-  { href: '/trackstack', label: 'TRACKSTACK' },
-  { href: '/team', label: 'TEAM' },
-  { href: '/contact', label: 'CONTACT' },
+  { href: '/#home', label: 'HOME' },
+  { href: '/#about', label: 'ABOUT US' },
+  { href: '/#artists', label: 'ARTISTS' },
+  { href: '/#live-sets', label: 'LIVE SETS' },
+  { href: '/#trackstack', label: 'TRACKSTACK' },
+  { href: '/#team', label: 'TEAM' },
+  { href: '/#contact', label: 'CONTACT' },
 ]
 
 function InstagramIcon() {
