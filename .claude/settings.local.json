@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/AJ Argudin/AppData/Roaming/**)",
+      "Read(//c/Users/AJ Argudin/AppData/Local/Programs//**)",
+      "PowerShell(Get-Command node -ErrorAction SilentlyContinue; Get-Command npm -ErrorAction SilentlyContinue; if \\(-not \\(Get-Command node -ErrorAction SilentlyContinue\\)\\) { Write-Host \"Node not found in PATH\" })"
+    ]
+  }
+}
