@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <h3 className="font-display text-2xl tracking-widest text-white mb-4">LET&apos;S CONNECT</h3>
             <p className="text-muted text-xs tracking-wider mb-3">For General Information &amp; Collabs:</p>
-            <p className="text-muted-2 text-sm mb-1">4four.mgmt@gmail.com</p>
+            <p className="text-muted-2 text-sm mb-1">management@4fourmgmt.com</p>
             <p className="text-muted-2 text-sm mb-8">AJ@4fourmgmt.com</p>
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2 text-xs px-6 py-3">
               CONTACT US →

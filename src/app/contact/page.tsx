@@ -82,14 +82,14 @@ export default function ContactPage() {
             {/* Email Links */}
             <div className="flex flex-col gap-4 mb-16">
               <a
-                href="mailto:4four.mgmt@gmail.com"
+                href="mailto:management@4fourmgmt.com"
                 className="flex items-center gap-4 border border-border p-5 group hover:border-white transition-colors"
               >
                 <Mail size={18} className="text-muted group-hover:text-white transition-colors" />
                 <div>
                   <p className="text-xs tracking-widest text-muted mb-1">GENERAL</p>
                   <p className="text-white text-sm tracking-wide group-hover:text-muted-2 transition-colors">
-                    4four.mgmt@gmail.com
+                    management@4fourmgmt.com
                   </p>
                 </div>
               </a>
@@ -217,8 +217,8 @@ export default function ContactPage() {
 
                 <p className="text-muted text-xs tracking-wider text-center">
                   Or email us directly at{' '}
-                  <a href="mailto:4four.mgmt@gmail.com" className="text-white hover:text-muted transition-colors">
-                    4four.mgmt@gmail.com
+                  <a href="mailto:management@4fourmgmt.com" className="text-white hover:text-muted transition-colors">
+                    management@4fourmgmt.com
                   </a>
                 </p>
               </form>
