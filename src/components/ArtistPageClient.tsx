@@ -19,45 +19,38 @@ export default function ArtistPageClient({ artist }: Props) {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[90vh] flex items-end bg-black overflow-hidden">
-        {/* Portrait */}
-        {artist.portrait && (
-          <div className="absolute inset-0">
+      <section className="pt-20 bg-black border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-10 items-center">
+
+          {/* Left 1/3 — Artist image */}
+          <div className="relative w-full md:w-1/3 aspect-[3/4] overflow-hidden border border-border shrink-0">
             <Image
-              src={urlFor(artist.portrait).width(1400).height(900).url()}
+              src={`/artists/${artist.slug?.current?.toUpperCase()}/Artist-photo2.jpeg`}
               alt={artist.name}
               fill
               className="object-cover grayscale"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
           </div>
-        )}
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
-          <p className="section-label">{artist.role}</p>
-          <h1 className="font-display text-[clamp(4rem,12vw,10rem)] leading-none tracking-widest mb-8">
-            {artist.name.toUpperCase()}
-          </h1>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => setStreamOpen(true)}
-              className="btn-primary"
-            >
-              Stream →
-            </button>
-            {artist.instagramUrl && (
-              <a
-                href={artist.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                <Instagram size={14} /> Instagram
-              </a>
-            )}
+          {/* Right 2/3 — Info */}
+          <div className="flex-1">
+            <p className="section-label mb-2">{artist.role}</p>
+            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] leading-none tracking-widest mb-8">
+              {artist.name.toUpperCase()}
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button onClick={() => setStreamOpen(true)} className="btn-primary">
+                Stream →
+              </button>
+              {artist.instagramUrl && (
+                <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                  <Instagram size={14} /> Instagram
+                </a>
+              )}
+            </div>
           </div>
+
         </div>
       </section>
 
