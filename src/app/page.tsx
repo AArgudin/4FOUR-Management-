@@ -122,13 +122,26 @@ export default async function HomePage() {
                 Explore our artists&apos; full track catalog on Trackstack.
               </p>
             </div>
+            {/* DJ card linking to Trackstack */}
             <a
               href={settings?.trackstackUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-sm px-10 py-4 self-start md:self-center"
+              className="group border border-border hover:border-white transition-colors duration-300 w-48 shrink-0"
             >
-              Open Trackstack →
+              <div className="relative w-48 h-48 overflow-hidden">
+                <Image
+                  src="/artists/SASH/Artist-photo.jpeg"
+                  alt="SASH"
+                  fill
+                  className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+              </div>
+              <div className="px-4 py-3 border-t border-border">
+                <p className="font-display text-lg tracking-widest">SASH</p>
+                <p className="text-muted text-xs tracking-widest mt-0.5">VIEW TRACKSTACK →</p>
+              </div>
             </a>
           </div>
         </div>
