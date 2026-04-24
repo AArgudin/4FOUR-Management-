@@ -88,7 +88,7 @@ export default function Nav() {
 
           {/* Social icons - right */}
           <div className="hidden lg:flex items-center justify-end gap-5">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/4four_mgmt?igsh=eTlvdTRtbTh1YTRs&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">
@@ -135,7 +135,7 @@ export default function Nav() {
             ))}
           </nav>
           <div className="flex items-center justify-center gap-8 px-6 py-10 border-t border-border">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/4four_mgmt?igsh=eTlvdTRtbTh1YTRs&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">

@@ -57,7 +57,7 @@ export default function Footer() {
               <Image src="/logo.png" alt="4FOUR MGMT" width={120} height={120} />
             </Link>
             <div className="flex items-center gap-6">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/4four_mgmt?igsh=eTlvdTRtbTh1YTRs&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
                 <InstagramIcon />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">
