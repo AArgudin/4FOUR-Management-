@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Center — logo + social */}
           <div className="flex flex-col items-center justify-center gap-6">
             <Link href="/" className="hover:opacity-75 transition-opacity">
-              <Image src="/logo.png" alt="4FOUR MGMT" width={120} height={120} className="invert" />
+              <Image src="/logo.png" alt="4FOUR MGMT" width={120} height={120} />
             </Link>
             <div className="flex items-center gap-6">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
