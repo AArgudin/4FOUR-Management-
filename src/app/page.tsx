@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { client } from '@/lib/sanity'
 import { artistsQuery, teamQuery, siteSettingsQuery } from '@/lib/queries'
 import type { Artist, TeamMember, SiteSettings } from '@/types'
-import ArtistCard from '@/components/ArtistCard'
+import ArtistFeatureCard from '@/components/ArtistFeatureCard'
 import TeamCard from '@/components/TeamCard'
 import LiveSetCarousel from '@/components/LiveSetCarousel'
 
@@ -88,15 +88,16 @@ export default async function HomePage() {
               VIEW ALL ARTISTS <span>→</span>
             </Link>
           </div>
-          {featuredArtists.length > 0 ? (
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredArtists.map(artist => (
-                <ArtistCard key={artist._id} artist={artist} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-muted text-xs tracking-widest">No artists yet.</p>
-          )}
+          <div className="flex flex-col gap-4">
+            <ArtistFeatureCard
+              name="Artist Name"
+              role="DJ / Producer"
+              slug="artist-slug"
+              artistImage="/artists/artist-photo.jpg"
+              logoImage="/artists/artist-logo.png"
+              compact
+            />
+          </div>
         </div>
       </section>
 
