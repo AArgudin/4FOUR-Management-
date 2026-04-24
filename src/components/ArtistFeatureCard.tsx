@@ -13,7 +13,7 @@ interface Props {
 export default function ArtistFeatureCard({ name, role, slug, artistImage, logoImage, compact }: Props) {
   return (
     <Link href={`/talent/${slug}`} className="group block border border-border hover:border-white transition-colors duration-300">
-      <div className={`flex ${compact ? 'h-[180px]' : 'h-[420px]'}`}>
+      <div className={`flex ${compact ? 'h-[120px]' : 'h-[280px]'}`}>
 
         {/* Left 1/3 — Artist photo */}
         <div className="relative w-1/3 overflow-hidden">
