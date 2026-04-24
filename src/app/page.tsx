@@ -29,7 +29,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center">
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-0 right-0 h-px bg-border opacity-20" />
           <div className="absolute bottom-1/4 left-0 right-0 h-px bg-border opacity-20" />
@@ -43,7 +43,7 @@ export default async function HomePage() {
             alt="4FOUR MGMT"
             width={520}
             height={260}
-            className="invert w-[clamp(260px,50vw,520px)] h-auto"
+            className="w-[clamp(260px,50vw,520px)] h-auto"
             priority
           />
           <p className="text-muted text-xs md:text-sm tracking-[0.35em] uppercase">

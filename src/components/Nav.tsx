@@ -65,7 +65,7 @@ export default function Nav() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-20">
           {/* Logo - left */}
           <Link href="/" className="hover:opacity-75 transition-opacity justify-self-start">
-            <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} className="invert" priority />
+            <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} priority />
           </Link>
 
           {/* Nav links - center */}
