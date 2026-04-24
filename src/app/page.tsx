@@ -90,11 +90,11 @@ export default async function HomePage() {
           </div>
           <div className="flex flex-col gap-4">
             <ArtistFeatureCard
-              name="Artist Name"
+              name="SASH"
               role="DJ / Producer"
-              slug="artist-slug"
-              artistImage="/artists/artist-photo.jpg"
-              logoImage="/artists/artist-logo.png"
+              slug="sash"
+              artistImage="/artists/SASH/Artist-photo.jpeg"
+              logoImage="/artists/SASH/Artist-logo.png"
               compact
             />
           </div>
