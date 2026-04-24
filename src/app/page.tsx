@@ -112,7 +112,7 @@ export default async function HomePage() {
       {/* ── TRACKSTACK ── */}
       <section id="trackstack" className="py-24 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-16">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
             <div>
               <p className="section-label mb-4">Track Catalog</p>
               <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-tight tracking-widest mb-4">
@@ -127,7 +127,7 @@ export default async function HomePage() {
               href={settings?.trackstackUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-border hover:border-white transition-colors duration-300 w-48 shrink-0"
+              className="group border border-border hover:border-white transition-colors duration-300 w-48 shrink-0 md:mr-32"
             >
               <div className="relative w-48 h-48 overflow-hidden">
                 <Image
