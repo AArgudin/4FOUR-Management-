@@ -77,7 +77,7 @@ export default async function HomePage() {
       {/* ── ARTISTS ── */}
       <section id="artists" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="section-label mb-10">Roster</p>
+          <p className="section-label mb-10">Artist</p>
           <div className="flex flex-col gap-4 w-1/4">
             <ArtistFeatureCard
               name="SASH"
