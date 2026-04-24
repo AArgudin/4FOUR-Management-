@@ -29,7 +29,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20 -mt-12">
+      <section className="relative min-h-screen bg-black px-6 text-center">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-0 right-0 h-px bg-border opacity-20" />
           <div className="absolute bottom-1/4 left-0 right-0 h-px bg-border opacity-20" />
@@ -37,7 +37,8 @@ export default async function HomePage() {
           <div className="absolute top-0 bottom-0 right-1/4 w-px bg-border opacity-10" />
         </div>
 
-        <div className="relative z-10 flex flex-col items-center gap-6 max-w-3xl mx-auto">
+        {/* Logo — centered on screen */}
+        <div className="absolute inset-0 flex items-center justify-center pt-20">
           <Image
             src="/logo.png"
             alt="4FOUR MGMT"
@@ -46,10 +47,13 @@ export default async function HomePage() {
             className="w-[clamp(260px,50vw,520px)] h-auto"
             priority
           />
+        </div>
+
+        {/* Tagline — centered between logo bottom and page bottom (3/4 down) */}
+        <div className="absolute bottom-0 left-0 right-0 h-[25vh] flex items-center justify-center">
           <p className="text-muted text-xs md:text-sm tracking-[0.35em] uppercase">
             MANAGING THE FUTURE OF HOUSE
           </p>
-
         </div>
       </section>
 
