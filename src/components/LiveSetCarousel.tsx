@@ -34,7 +34,7 @@ export default function LiveSetCarousel() {
   return (
     <div className="flex flex-col gap-4">
       {/* Title */}
-      <p className="text-white text-xs tracking-[0.3em] uppercase text-center md:text-left">
+      <p className="text-white text-xs tracking-[0.3em] uppercase text-center">
         {current.title}
       </p>
 
