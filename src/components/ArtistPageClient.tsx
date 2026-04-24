@@ -25,7 +25,7 @@ export default function ArtistPageClient({ artist }: Props) {
           {/* Left 1/3 — Artist image */}
           <div className="relative w-full md:w-1/3 aspect-[3/4] overflow-hidden border border-border shrink-0">
             <Image
-              src={`/artists/${artist.slug?.current?.toUpperCase()}/Artist-photo2.jpeg`}
+              src={`/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
               alt={artist.name}
               fill
               className="object-cover grayscale"
