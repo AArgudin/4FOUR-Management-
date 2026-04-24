@@ -131,7 +131,7 @@ export default async function HomePage() {
             >
               <div className="relative w-56 h-28 overflow-hidden">
                 <Image
-                  src="/artists/SASH/Artist-photo.jpeg"
+                  src="/artists/SASH/artist-photo2.jpg"
                   alt="SASH"
                   fill
                   className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
