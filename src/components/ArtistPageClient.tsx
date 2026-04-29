@@ -45,6 +45,9 @@ export default function ArtistPageClient({ artist }: Props) {
                   <Instagram size={14} /> Instagram
                 </a>
               )}
+              <Link href={`/talent/${artist.slug?.current}/set-schedule`} className="btn-primary">
+                Set Schedule →
+              </Link>
             </div>
           </div>
 
