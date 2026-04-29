@@ -53,11 +53,11 @@ export default function ArtistPageClient({ artist }: Props) {
             {/* Supported artists scrollable list */}
             <div className="border border-border w-fit min-w-[220px]">
               <div className="px-5 py-3 border-b border-border">
-                <p className="text-xs tracking-widest text-muted uppercase">Supported Artists</p>
+                <p className="text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
               </div>
               <div className="overflow-y-auto max-h-[180px] scrollbar-black">
-                {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore'].map((name, i, arr) => (
-                  <div key={name} className={`px-5 py-3 text-sm tracking-widest text-white ${i < arr.length - 1 ? 'border-b border-border' : ''}`}>
+                {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore'].map((name) => (
+                  <div key={name} className="px-5 py-3 text-sm tracking-widest text-white">
                     {name}
                   </div>
                 ))}
