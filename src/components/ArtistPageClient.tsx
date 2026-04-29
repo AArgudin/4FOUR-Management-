@@ -50,7 +50,7 @@ export default function ArtistPageClient({ artist }: Props) {
 
           {/* Right — Scrollable bio box */}
           {artist.bio && (
-            <div className="w-full md:w-72 shrink-0 border border-border flex flex-col">
+            <div className="w-full md:w-[420px] shrink-0 border border-border flex flex-col">
               <div className="px-5 py-4 border-b border-border">
                 <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
               </div>
