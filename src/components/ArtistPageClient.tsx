@@ -20,10 +20,10 @@ export default function ArtistPageClient({ artist }: Props) {
     <>
       {/* ── HERO ── */}
       <section className="pt-20 bg-black border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-10 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-10 items-stretch">
 
           {/* Left 1/3 — Artist image */}
-          <div className="relative w-full md:w-1/3 aspect-[3/4] overflow-hidden border border-border shrink-0">
+          <div className="relative w-full md:w-1/3 aspect-[3/4] md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
             <Image
               src={`/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
               alt={artist.name}
@@ -33,10 +33,10 @@ export default function ArtistPageClient({ artist }: Props) {
             />
           </div>
 
-          {/* Right 2/3 — Info */}
-          <div className="flex-1">
+          {/* Center — Name, role, buttons */}
+          <div className="flex-1 flex flex-col justify-center">
             <p className="section-label mb-2">{artist.role}</p>
-            <h1 className="font-display text-[clamp(3rem,10vw,8rem)] leading-none tracking-widest mb-8">
+            <h1 className="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-widest mb-8">
               {artist.name.toUpperCase()}
             </h1>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -48,25 +48,22 @@ export default function ArtistPageClient({ artist }: Props) {
             </div>
           </div>
 
+          {/* Right — Scrollable bio box */}
+          {artist.bio && (
+            <div className="w-full md:w-72 shrink-0 border border-border flex flex-col">
+              <div className="px-5 py-4 border-b border-border">
+                <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
+              </div>
+              <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-thin">
+                <p className="text-muted-2 text-xs leading-relaxed tracking-wide whitespace-pre-line">
+                  {artist.bio}
+                </p>
+              </div>
+            </div>
+          )}
+
         </div>
       </section>
-
-      {/* ── BIO ── */}
-      {artist.bio && (
-        <section className="py-24 bg-black border-t border-border">
-          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-1">
-              <p className="section-label">Biography</p>
-              <h2 className="font-display text-3xl tracking-widest">ABOUT</h2>
-            </div>
-            <div className="md:col-span-2">
-              <p className="text-muted-2 leading-relaxed text-sm md:text-base whitespace-pre-line">
-                {artist.bio}
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
 
 
       {/* ── GALLERY ── */}
