@@ -8,7 +8,7 @@ export const staticArtists: Artist[] = [
     role: 'DJ / Producer',
     portrait: null as any,
     bio: '',
-    instagramUrl: '',
+    instagramUrl: 'https://www.instagram.com/sasha.warlaumont?igsh=Mm9qazYxcjhud3Nx',
     tiktokUrl: '',
     photos: [],
     videos: [],

@@ -40,11 +40,8 @@ export default function ArtistPageClient({ artist }: Props) {
               {artist.name.toUpperCase()}
             </h1>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={() => setStreamOpen(true)} className="btn-primary">
-                Stream →
-              </button>
               {artist.instagramUrl && (
-                <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <Instagram size={14} /> Instagram
                 </a>
               )}
