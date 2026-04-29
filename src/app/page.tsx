@@ -118,9 +118,6 @@ export default async function HomePage() {
               <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-tight tracking-widest mb-4">
                 TRACKSTACK
               </h2>
-              <p className="text-muted-2 text-sm leading-relaxed max-w-md">
-                Explore our artists&apos; full track catalog on Trackstack.
-              </p>
             </div>
             {/* DJ card linking to Trackstack */}
             <a
