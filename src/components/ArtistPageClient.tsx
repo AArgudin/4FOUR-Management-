@@ -39,7 +39,7 @@ export default function ArtistPageClient({ artist }: Props) {
             <h1 className="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-widest mb-8">
               {artist.name.toUpperCase()}
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 w-fit">
               {artist.instagramUrl && (
                 <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <Instagram size={14} /> Instagram
