@@ -33,13 +33,13 @@ export default function ArtistPageClient({ artist }: Props) {
             />
           </div>
 
-          {/* Center — Name, role, buttons */}
-          <div className="flex-1 flex flex-col justify-center">
+          {/* Center — Name, role, buttons, supported artists */}
+          <div className="flex-1 flex flex-col justify-start pt-2">
             <p className="section-label mb-2">{artist.role}</p>
             <h1 className="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-widest mb-8">
               {artist.name.toUpperCase()}
             </h1>
-            <div className="flex flex-col gap-4 w-fit">
+            <div className="flex flex-col gap-4 w-fit mb-8">
               {artist.instagramUrl && (
                 <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <Instagram size={14} /> Instagram
@@ -48,6 +48,20 @@ export default function ArtistPageClient({ artist }: Props) {
               <Link href={`/talent/${artist.slug?.current}/set-schedule`} className="btn-primary">
                 Set Schedule →
               </Link>
+            </div>
+
+            {/* Supported artists scrollable list */}
+            <div className="border border-border w-fit min-w-[220px]">
+              <div className="px-5 py-3 border-b border-border">
+                <p className="text-xs tracking-widest text-muted uppercase">Supported Artists</p>
+              </div>
+              <div className="overflow-y-auto max-h-[180px] scrollbar-black">
+                {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore'].map((name, i, arr) => (
+                  <div key={name} className={`px-5 py-3 text-sm tracking-widest text-white ${i < arr.length - 1 ? 'border-b border-border' : ''}`}>
+                    {name}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
