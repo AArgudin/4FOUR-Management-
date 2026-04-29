@@ -151,16 +151,54 @@ export default async function HomePage() {
       <section id="team" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <p className="section-label mb-10">The Team</p>
-          {featuredTeam.length > 0 ? (
-            <div className="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 md:divide-x divide-border border border-border">
+
+          {/* AJ Argudin card */}
+          <div className="group relative border border-border hover:border-white/40 transition-colors duration-300 w-56 overflow-hidden">
+            <div className="relative w-56 h-28 overflow-hidden">
+              <Image
+                src="/team/AJ/Team-AJ.jpeg"
+                alt="AJ Argudin"
+                fill
+                className="object-cover grayscale group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-black/20" />
+            </div>
+            <div className="px-4 py-3 border-t border-border">
+              <p className="font-bold text-white text-sm tracking-widest">AJ Argudin</p>
+              <p className="text-muted text-xs tracking-widest mt-0.5">Founder // Talent Manager</p>
+            </div>
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center gap-3 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a href="mailto:AJ@4fourmgmt.com" className="text-white text-[10px] tracking-widest hover:text-muted transition-colors text-center">
+                AJ@4fourmgmt.com
+              </a>
+              <a href="tel:+17864240098" className="text-white text-[10px] tracking-widest hover:text-muted transition-colors">
+                +1 (786) 424-0098
+              </a>
+              <a
+                href="https://www.instagram.com/ajargudin_?igsh=MTFtbnA5ZWs4YnQ0aA%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-muted hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {featuredTeam.length > 0 && (
+            <div className="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 md:divide-x divide-border border border-border mt-6">
               {featuredTeam.map(member => (
                 <div key={member._id} className="flex-1 min-w-[200px]">
                   <TeamCard member={member} />
                 </div>
               ))}
             </div>
-          ) : (
-            <p className="text-muted text-xs tracking-widest">Team profiles coming soon.</p>
           )}
         </div>
       </section>
