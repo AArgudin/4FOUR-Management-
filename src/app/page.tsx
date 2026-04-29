@@ -29,7 +29,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20 -mt-12">
+      <section id="home" className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 text-center pt-20 -mt-12 pb-32">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-0 right-0 h-px bg-border opacity-20" />
           <div className="absolute bottom-1/4 left-0 right-0 h-px bg-border opacity-20" />
