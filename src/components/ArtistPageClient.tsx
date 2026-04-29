@@ -54,7 +54,7 @@ export default function ArtistPageClient({ artist }: Props) {
               <div className="px-5 py-4 border-b border-border">
                 <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
               </div>
-              <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-thin">
+              <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-black">
                 <p className="text-muted-2 text-xs leading-relaxed tracking-wide whitespace-pre-line">
                   {artist.bio}
                 </p>
