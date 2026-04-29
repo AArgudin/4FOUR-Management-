@@ -10,6 +10,7 @@ export const staticArtists: Artist[] = [
     bio: '',
     instagramUrl: 'https://www.instagram.com/sasha.warlaumont?igsh=Mm9qazYxcjhud3Nx',
     tiktokUrl: '',
+    soundcloudUrl: 'https://on.soundcloud.com/2xRvF42qqcT4XDaWbl',
     photos: [],
     videos: [],
     shows: [],
