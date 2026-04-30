@@ -5,8 +5,9 @@ export const metadata = {
 }
 
 const schedule = [
-  { event: 'Break Away Festival', date: '17.04.2026' },
-  { event: 'Lakeshore Festival',  date: '19-20.06.2026' },
+  { event: 'Break Away Festival', location: 'Tampa, FL - USA',    date: '17.04.2026' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',  date: '19.06.2026' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',  date: '20.06.2026' },
 ]
 
 export default function SetSchedulePage() {
@@ -18,11 +19,19 @@ export default function SetSchedulePage() {
           SET SCHEDULE
         </h1>
 
-        <div className="divide-y divide-border border-t border-border mb-16">
-          {schedule.map(({ event, date }) => (
-            <div key={event} className="flex items-center justify-between py-6 px-2">
+        {/* Header row */}
+        <div className="grid grid-cols-3 px-2 pb-3 border-b border-border">
+          <p className="text-xs tracking-widest text-muted uppercase">Event</p>
+          <p className="text-xs tracking-widest text-muted uppercase text-center">Location</p>
+          <p className="text-xs tracking-widest text-muted uppercase text-right">Date</p>
+        </div>
+
+        <div className="divide-y divide-border mb-16">
+          {schedule.map(({ event, location, date }) => (
+            <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
               <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
-              <p className="text-sm md:text-base tracking-widest text-muted">{date}</p>
+              <p className="text-sm md:text-base tracking-widest text-muted-2 text-center">{location}</p>
+              <p className="text-sm md:text-base tracking-widest text-muted text-right">{date}</p>
             </div>
           ))}
         </div>
