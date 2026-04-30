@@ -10,7 +10,11 @@
     scroll-behavior: smooth;
   }
   body {
-    background: #000;
+    background-color: #000;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(80, 80, 80, 0.15) 0%, transparent 70%),
+      radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px;
     color: #fff;
   }
 }
