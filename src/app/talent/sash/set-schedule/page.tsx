@@ -26,7 +26,7 @@ export default function SetSchedulePage() {
           <p className="text-xs tracking-widest text-muted uppercase text-right">Date</p>
         </div>
 
-        <div className="divide-y divide-border mb-16">
+        <div className="mb-16">
           {schedule.map(({ event, location, date }) => (
             <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
               <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
