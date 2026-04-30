@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes glowPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -12,9 +17,13 @@
   body {
     background-color: #000;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(80, 80, 80, 0.15) 0%, transparent 70%),
-      radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px;
+      radial-gradient(ellipse 90% 60% at 50% -5%, rgba(190, 190, 220, 0.42) 0%, rgba(110, 110, 140, 0.14) 42%, transparent 68%),
+      radial-gradient(ellipse 55% 45% at 0% 100%, rgba(100, 100, 130, 0.26) 0%, transparent 58%),
+      radial-gradient(ellipse 55% 45% at 100% 100%, rgba(100, 100, 130, 0.26) 0%, transparent 58%),
+      linear-gradient(rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.065) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+    animation: glowPulse 8s ease-in-out infinite;
     color: #fff;
   }
 }
