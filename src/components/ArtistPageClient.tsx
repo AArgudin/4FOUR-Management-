@@ -26,7 +26,7 @@ export default function ArtistPageClient({ artist }: Props) {
           <div className="flex flex-row gap-4 md:gap-10 items-stretch">
 
             {/* Image */}
-            <div className="relative w-1/2 md:w-1/3 aspect-[3/4] md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
+            <div className="relative w-2/5 md:w-1/3 aspect-[3/4] md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
               <Image
                 src={`/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
                 alt={artist.name}
