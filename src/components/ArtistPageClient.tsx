@@ -200,6 +200,22 @@ export default function ArtistPageClient({ artist }: Props) {
         </section>
       )}
 
+      {/* ── NEW RELEASES ── */}
+      <section className="py-24 bg-black border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="section-label mb-4">Music</p>
+          <h2 className="font-display text-4xl tracking-widest mb-10">NEW RELEASES</h2>
+          <div className="flex flex-wrap gap-6">
+            {/* Placeholder release card — replace with real image + link when ready */}
+            <div className="border border-border w-48 flex flex-col">
+              <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
+                <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── BACK LINK ── */}
       <section className="py-16 bg-surface border-t border-border">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
