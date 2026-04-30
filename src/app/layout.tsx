@@ -3,6 +3,7 @@ import { Bebas_Neue, Inter } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import BackgroundCanvas from '@/components/BackgroundCanvas'
 
 const bebas = Bebas_Neue({
   weight: '400',
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebas.variable} ${inter.variable}`}>
       <body className="bg-black text-white font-body antialiased">
+        <BackgroundCanvas />
         <Nav />
         <main>{children}</main>
         <Footer />
