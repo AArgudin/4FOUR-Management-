@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebas.variable} ${inter.variable}`}>
       <body className="bg-black text-white font-body antialiased">
+        <div className="bg-canvas" aria-hidden="true" />
         <Nav />
         <main>{children}</main>
         <Footer />

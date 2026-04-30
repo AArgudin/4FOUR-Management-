@@ -21,20 +21,28 @@
   }
   body {
     background-color: #000;
-    background-image:
-      radial-gradient(ellipse 85% 60% at 50% -8%, rgba(215, 215, 245, 0.62) 0%, rgba(145, 145, 180, 0.24) 36%, transparent 63%),
-      linear-gradient(135deg, rgba(170, 170, 210, 0.09) 0%, transparent 48%),
-      linear-gradient(225deg, rgba(170, 170, 210, 0.09) 0%, transparent 48%),
-      radial-gradient(ellipse 65% 52% at -5% 102%, rgba(125, 125, 160, 0.34) 0%, transparent 56%),
-      radial-gradient(ellipse 65% 52% at 105% 102%, rgba(125, 125, 160, 0.34) 0%, transparent 56%),
-      radial-gradient(ellipse 38% 24% at 50% 50%, rgba(75, 75, 100, 0.2) 0%, transparent 65%),
-      linear-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.075) 1px, transparent 1px),
-      repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.06) 3px, rgba(0, 0, 0, 0.06) 4px);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px, 100% 100%;
-    animation: glowPulse 5s ease-in-out infinite, gridDrift 30s linear infinite;
     color: #fff;
   }
+}
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background-color: #000;
+  background-image:
+    radial-gradient(ellipse 85% 60% at 50% -8%, rgba(215, 215, 245, 0.62) 0%, rgba(145, 145, 180, 0.24) 36%, transparent 63%),
+    linear-gradient(135deg, rgba(170, 170, 210, 0.09) 0%, transparent 48%),
+    linear-gradient(225deg, rgba(170, 170, 210, 0.09) 0%, transparent 48%),
+    radial-gradient(ellipse 65% 52% at -5% 102%, rgba(125, 125, 160, 0.34) 0%, transparent 56%),
+    radial-gradient(ellipse 65% 52% at 105% 102%, rgba(125, 125, 160, 0.34) 0%, transparent 56%),
+    radial-gradient(ellipse 38% 24% at 50% 50%, rgba(75, 75, 100, 0.2) 0%, transparent 65%),
+    linear-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.06) 3px, rgba(0, 0, 0, 0.06) 4px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 60px 60px, 60px 60px, 100% 100%;
+  animation: glowPulse 5s ease-in-out infinite, gridDrift 30s linear infinite;
 }
 
 .scrollbar-black::-webkit-scrollbar {
