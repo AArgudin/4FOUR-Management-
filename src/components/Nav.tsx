@@ -63,14 +63,14 @@ export default function Nav() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-3 items-center h-20">
+        <div className="max-w-7xl mx-auto px-6 flex items-center h-20">
           {/* Logo - left */}
-          <Link href="/" className="hover:opacity-75 transition-opacity justify-self-start">
+          <Link href="/" className="hover:opacity-75 transition-opacity shrink-0">
             <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} priority />
           </Link>
 
-          {/* Nav links - center */}
-          <nav className="hidden lg:flex items-center justify-center gap-8">
+          {/* Nav links - center (desktop only) */}
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-8">
             {navLinks.map(link => (
               <Link
                 key={link.href}
@@ -86,8 +86,8 @@ export default function Nav() {
             ))}
           </nav>
 
-          {/* Social icons - right */}
-          <div className="hidden lg:flex items-center justify-end gap-5">
+          {/* Social icons - right (desktop only) */}
+          <div className="hidden lg:flex items-center gap-5">
             <a href="https://www.instagram.com/4four_mgmt?igsh=eTlvdTRtbTh1YTRs&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Instagram">
               <InstagramIcon />
             </a>
@@ -99,9 +99,9 @@ export default function Nav() {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger - pushed to far right */}
           <button
-            className="lg:hidden text-white p-1 justify-self-end mr-1"
+            className="lg:hidden text-white p-1 ml-auto"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -113,14 +113,7 @@ export default function Nav() {
       {/* Mobile overlay */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-black flex flex-col">
-          <div className="h-20 flex items-center justify-between px-6 border-b border-border">
-            <Link href="/">
-              <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} className="invert" />
-            </Link>
-            <button onClick={() => setMenuOpen(false)} className="text-white p-1" aria-label="Close menu">
-              <X size={22} />
-            </button>
-          </div>
+          <div className="h-20 border-b border-border shrink-0" />
           <nav className="flex-1 flex flex-col justify-center items-center gap-8 px-6">
             {navLinks.map(link => (
               <Link
