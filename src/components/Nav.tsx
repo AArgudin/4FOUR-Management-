@@ -63,7 +63,7 @@ export default function Nav() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm border-b border-border' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-3 items-center h-20">
           {/* Logo - left */}
           <Link href="/" className="hover:opacity-75 transition-opacity justify-self-start">
             <Image src="/logo.png" alt="4FOUR MGMT" width={64} height={64} priority />
@@ -101,7 +101,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden text-white p-1 justify-self-end"
+            className="lg:hidden text-white p-1 justify-self-end mr-1"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
