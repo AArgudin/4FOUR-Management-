@@ -223,6 +223,7 @@ export default function ArtistPageClient({ artist }: Props) {
             instagramUrl: artist.instagramUrl,
             tiktokUrl: artist.tiktokUrl,
             soundcloudUrl: artist.soundcloudUrl,
+            spotifyUrl: artist.spotifyUrl,
           }}
           onClose={() => setStreamOpen(false)}
         />

@@ -17,6 +17,7 @@ Now establishing himself as both a DJ and producer, Sash is shaping a distinct i
     instagramUrl: 'https://www.instagram.com/sasha.warlaumont?igsh=Mm9qazYxcjhud3Nx',
     tiktokUrl: '',
     soundcloudUrl: 'https://on.soundcloud.com/2xRvF42qqcT4XDaWbl',
+    spotifyUrl: 'https://open.spotify.com/user/92ff26afolmd08xcifn7xmkcz',
     photos: [],
     videos: [],
     shows: [],

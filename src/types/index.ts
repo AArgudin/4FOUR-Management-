@@ -8,6 +8,7 @@ export interface Artist {
   instagramUrl: string
   tiktokUrl: string
   soundcloudUrl: string
+  spotifyUrl: string
   photos: SanityImage[]
   videos: { title: string; url: string }[]
   shows: { date: string; venue: string; city: string }[]
