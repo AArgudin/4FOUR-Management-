@@ -121,7 +121,7 @@ export default async function HomePage() {
             </div>
             {/* DJ card linking to Trackstack */}
             <a
-              href="http://tstack.link/sash-VN-7tGKae0wc8rsX7L8GG"
+              href="https://tstack.link/sash-VN-7tGKae0wc8rsX7L8GG"
               target="_blank"
               rel="noopener noreferrer"
               className="group border border-border hover:border-white transition-colors duration-300 w-56 shrink-0 md:mr-96"
