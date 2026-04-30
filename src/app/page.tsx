@@ -78,7 +78,7 @@ export default async function HomePage() {
       <section id="artists" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <p className="section-label mb-10">Artist</p>
-          <div className="flex flex-col gap-4 w-2/5">
+          <div className="flex flex-col gap-4 w-2/5 lg:w-1/4">
             <ArtistFeatureCard
               name="SASH"
               role="DJ / Producer"
