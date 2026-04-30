@@ -20,44 +20,44 @@ export default function ArtistPageClient({ artist }: Props) {
     <>
       {/* ── HERO ── */}
       <section className="pt-20 bg-black border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-10 items-stretch">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16 flex flex-col md:flex-row gap-6 md:gap-10 items-stretch">
 
-          {/* Left 1/3 — Artist image */}
-          <div className="relative w-full md:w-1/3 aspect-[3/4] md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
+          {/* Artist image — small on mobile, tall on desktop */}
+          <div className="relative w-full h-48 md:h-auto md:w-1/3 md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
             <Image
               src={`/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
               alt={artist.name}
               fill
-              className="object-cover grayscale"
+              className="object-cover object-top grayscale"
               priority
             />
           </div>
 
           {/* Center — Name, role, buttons, supported artists */}
-          <div className="flex-1 flex flex-col justify-start pt-2">
-            <p className="section-label mb-2">{artist.role}</p>
-            <h1 className="font-display text-[clamp(3rem,8vw,7rem)] leading-none tracking-widest mb-8">
+          <div className="flex-1 flex flex-col justify-start pt-1 md:pt-2">
+            <p className="section-label mb-1 md:mb-2">{artist.role}</p>
+            <h1 className="font-display text-[clamp(2.5rem,8vw,7rem)] leading-none tracking-widest mb-4 md:mb-8">
               {artist.name.toUpperCase()}
             </h1>
-            <div className="flex flex-col gap-4 w-fit mb-8">
+            <div className="flex flex-row md:flex-col gap-3 md:gap-4 w-full md:w-fit mb-6 md:mb-8">
               {artist.instagramUrl && (
-                <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-primary flex-1 md:flex-none justify-center md:justify-start">
                   <Instagram size={14} /> Instagram
                 </a>
               )}
-              <Link href={`/talent/${artist.slug?.current}/set-schedule`} className="btn-primary">
+              <Link href={`/talent/${artist.slug?.current}/set-schedule`} className="btn-primary flex-1 md:flex-none justify-center md:justify-start">
                 Set Schedule →
               </Link>
             </div>
 
             {/* Supported artists scrollable list */}
-            <div className="border border-border w-fit min-w-[220px]">
-              <div className="px-5 py-3 border-b border-border">
+            <div className="border border-border w-full md:w-fit md:min-w-[220px]">
+              <div className="px-4 py-2 md:px-5 md:py-3 border-b border-border">
                 <p className="text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
               </div>
-              <div className="overflow-y-auto max-h-[180px] scrollbar-black">
+              <div className="overflow-y-auto max-h-[120px] md:max-h-[180px] scrollbar-black flex flex-wrap md:flex-col">
                 {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore'].map((name) => (
-                  <div key={name} className="px-5 py-3 text-sm tracking-widest text-white">
+                  <div key={name} className="px-4 py-2 md:px-5 md:py-3 text-xs md:text-sm tracking-widest text-white">
                     {name}
                   </div>
                 ))}
@@ -71,7 +71,7 @@ export default function ArtistPageClient({ artist }: Props) {
               <div className="px-5 py-4 border-b border-border">
                 <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
               </div>
-              <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-black">
+              <div className="flex-1 overflow-y-auto max-h-[200px] md:max-h-[480px] px-4 md:px-5 py-4 md:py-5 scrollbar-black">
                 <p className="text-muted-2 text-xs leading-relaxed tracking-wide whitespace-pre-line">
                   {artist.bio}
                 </p>
