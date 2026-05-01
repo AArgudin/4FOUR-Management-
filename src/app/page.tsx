@@ -194,7 +194,7 @@ export default async function HomePage() {
           <div className="group relative border border-border hover:border-white/40 transition-colors duration-300 w-56 overflow-hidden">
             <div className="relative w-56 h-28 overflow-hidden">
               <Image
-                src="/team/Nicholas/Nicholas-Team.jpeg"
+                src="/team/Nicholas/Nicholas-team2.jpeg"
                 alt="Nicholas Minkin"
                 fill
                 className="object-cover grayscale group-hover:scale-105 transition-transform duration-700"
