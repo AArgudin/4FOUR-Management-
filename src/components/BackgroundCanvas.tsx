@@ -17,11 +17,33 @@ export default function BackgroundCanvas() {
     canvas.width  = W
     canvas.height = H
 
+    // ── Cached image rects (updated on scroll/resize, not every frame) ──
+    let cachedRects: DOMRect[] = []
+
+    const isLogo = (img: HTMLImageElement) => {
+      const src = img.src.toLowerCase()
+      const alt = img.alt.toLowerCase()
+      return src.includes('logo') || alt.includes('logo') || alt.includes('4four mgmt')
+    }
+
+    const updateRects = () => {
+      cachedRects = []
+      document.querySelectorAll('img').forEach(img => {
+        if (isLogo(img as HTMLImageElement)) return // let animation show through logos
+        const r = img.getBoundingClientRect()
+        if (r.width > 10 && r.height > 10) cachedRects.push(r)
+      })
+    }
+
+    updateRects()
+    window.addEventListener('scroll', updateRects, { passive: true })
+
     const onResize = () => {
       W = window.innerWidth
       H = window.innerHeight
       canvas.width  = W
       canvas.height = H
+      updateRects()
     }
     window.addEventListener('resize', onResize)
 
@@ -46,22 +68,17 @@ export default function BackgroundCanvas() {
     }))
 
     const draw = () => {
-      // Black fill — screen blend makes this invisible
       ctx.fillStyle = '#000'
       ctx.fillRect(0, 0, W, H)
 
-      // ── Clip path: full canvas MINUS all image rects ──────────
+      // ── Clip: full canvas minus cached image rects ────────────
       ctx.save()
       ctx.beginPath()
       ctx.rect(0, 0, W, H)
-      const imgs = document.querySelectorAll('img')
-      imgs.forEach(img => {
-        const r = img.getBoundingClientRect()
-        if (r.width > 10 && r.height > 10) {
-          ctx.rect(r.left, r.top, r.width, r.height)
-        }
-      })
-      ctx.clip('evenodd') // evenodd punches holes where image rects overlap
+      for (const r of cachedRects) {
+        ctx.rect(r.left, r.top, r.width, r.height)
+      }
+      ctx.clip('evenodd')
 
       // — Aurora blobs —
       for (const b of blobs) {
@@ -85,7 +102,6 @@ export default function BackgroundCanvas() {
       // — Particle constellation —
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
-
         for (let j = i + 1; j < particles.length; j++) {
           const q  = particles[j]
           const dx = p.x - q.x
@@ -100,7 +116,6 @@ export default function BackgroundCanvas() {
             ctx.stroke()
           }
         }
-
         ctx.fillStyle = `rgba(255,255,255,${p.opacity})`
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
@@ -115,13 +130,13 @@ export default function BackgroundCanvas() {
       }
 
       ctx.restore()
-
       animRef.current = requestAnimationFrame(draw)
     }
 
     draw()
 
     return () => {
+      window.removeEventListener('scroll', updateRects)
       window.removeEventListener('resize', onResize)
       if (animRef.current) cancelAnimationFrame(animRef.current)
     }
