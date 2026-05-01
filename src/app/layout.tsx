@@ -4,7 +4,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import BackgroundCanvas from '@/components/BackgroundCanvas'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/next'
 
 const bebas = Bebas_Neue({
   weight: '400',
