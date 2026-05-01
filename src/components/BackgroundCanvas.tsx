@@ -118,7 +118,7 @@ export default function BackgroundCanvas() {
       style={{
         position:      'fixed',
         inset:         0,
-        zIndex:        0,
+        zIndex:        9999,
         pointerEvents: 'none',
         mixBlendMode:  'screen',
       }}
