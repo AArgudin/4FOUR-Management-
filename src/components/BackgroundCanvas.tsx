@@ -46,9 +46,22 @@ export default function BackgroundCanvas() {
     }))
 
     const draw = () => {
-      // Black fill — screen blend mode makes this transparent
+      // Black fill — screen blend makes this invisible
       ctx.fillStyle = '#000'
       ctx.fillRect(0, 0, W, H)
+
+      // ── Clip path: full canvas MINUS all image rects ──────────
+      ctx.save()
+      ctx.beginPath()
+      ctx.rect(0, 0, W, H)
+      const imgs = document.querySelectorAll('img')
+      imgs.forEach(img => {
+        const r = img.getBoundingClientRect()
+        if (r.width > 10 && r.height > 10) {
+          ctx.rect(r.left, r.top, r.width, r.height)
+        }
+      })
+      ctx.clip('evenodd') // evenodd punches holes where image rects overlap
 
       // — Aurora blobs —
       for (const b of blobs) {
@@ -100,6 +113,8 @@ export default function BackgroundCanvas() {
         if (p.y < 0) p.y = H
         if (p.y > H) p.y = 0
       }
+
+      ctx.restore()
 
       animRef.current = requestAnimationFrame(draw)
     }
