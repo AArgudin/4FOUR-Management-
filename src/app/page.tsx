@@ -192,8 +192,14 @@ export default async function HomePage() {
 
           {/* Nicholas Minkin card */}
           <div className="group relative border border-border hover:border-white/40 transition-colors duration-300 w-56 overflow-hidden">
-            <div className="relative w-56 h-28 overflow-hidden bg-surface flex items-center justify-center">
-              <span className="text-muted text-xs tracking-widest">Photo Coming Soon</span>
+            <div className="relative w-56 h-28 overflow-hidden">
+              <Image
+                src="/team/Nicholas/Nicholas-Team.jpeg"
+                alt="Nicholas Minkin"
+                fill
+                className="object-cover grayscale group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-black/20" />
             </div>
             <div className="px-4 py-3 border-t border-border">
               <p className="font-bold text-white text-sm tracking-widest">Nicholas Minkin</p>
