@@ -17,20 +17,20 @@ export default defineType({
       name: 'videos',
       title: 'YouTube Videos',
       type: 'array',
-      of: [defineType({ name: 'video', type: 'object', fields: [
+      of: [{ type: 'object', name: 'video', fields: [
         defineField({ name: 'title', type: 'string' }),
         defineField({ name: 'url', type: 'url' }),
-      ]})],
+      ]}],
     }),
     defineField({
       name: 'shows',
       title: 'Upcoming Shows',
       type: 'array',
-      of: [defineType({ name: 'show', type: 'object', fields: [
+      of: [{ type: 'object', name: 'show', fields: [
         defineField({ name: 'date', type: 'date' }),
         defineField({ name: 'venue', type: 'string' }),
         defineField({ name: 'city', type: 'string' }),
-      ]})],
+      ]}],
     }),
   ],
 })
