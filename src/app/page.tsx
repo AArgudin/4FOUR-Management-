@@ -203,7 +203,7 @@ export default async function HomePage() {
             </div>
             <div className="px-4 py-3 border-t border-border">
               <p className="font-bold text-white text-sm tracking-widest">Nicholas Minkin</p>
-              <p className="text-muted text-xs tracking-widest mt-0.5">Day to Day Operations</p>
+              <p className="text-muted text-xs tracking-widest mt-0.5">Day to Day Operations // Media</p>
             </div>
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center gap-3 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
