@@ -149,6 +149,8 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="section-label mb-10">The Team</p>
 
+          <div className="flex flex-wrap gap-6">
+
           {/* AJ Argudin card */}
           <div className="group relative border border-border hover:border-white/40 transition-colors duration-300 w-56 overflow-hidden">
             <div className="relative w-56 h-28 overflow-hidden">
@@ -187,6 +189,19 @@ export default async function HomePage() {
               </a>
             </div>
           </div>
+
+          {/* Nicholas Minkin card */}
+          <div className="group relative border border-border hover:border-white/40 transition-colors duration-300 w-56 overflow-hidden">
+            <div className="relative w-56 h-28 overflow-hidden bg-surface flex items-center justify-center">
+              <span className="text-muted text-xs tracking-widest">Photo Coming Soon</span>
+            </div>
+            <div className="px-4 py-3 border-t border-border">
+              <p className="font-bold text-white text-sm tracking-widest">Nicholas Minkin</p>
+              <p className="text-muted text-xs tracking-widest mt-0.5">Day to Day Operations</p>
+            </div>
+          </div>
+
+          </div>{/* end flex wrapper */}
 
           {featuredTeam.length > 0 && (
             <div className="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 md:divide-x divide-border border border-border mt-6">
