@@ -199,6 +199,28 @@ export default async function HomePage() {
               <p className="font-bold text-white text-sm tracking-widest">Nicholas Minkin</p>
               <p className="text-muted text-xs tracking-widest mt-0.5">Day to Day Operations</p>
             </div>
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center gap-3 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a href="mailto:management@4fourmgmt.com" className="text-white text-[10px] tracking-widest hover:text-muted transition-colors text-center">
+                management@4fourmgmt.com
+              </a>
+              <a href="tel:+16144060226" className="text-white text-[10px] tracking-widest hover:text-muted transition-colors">
+                +1 (614) 406-0226
+              </a>
+              <a
+                href="https://www.instagram.com/_nminkin_?igsh=NGx6amwxbGFsbzlx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-muted hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           </div>{/* end flex wrapper */}
