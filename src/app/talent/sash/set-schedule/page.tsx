@@ -5,9 +5,14 @@ export const metadata = {
 }
 
 const schedule = [
-  { event: 'Break Away Festival', location: 'Tampa, FL - USA',    date: '17.04.2026' },
-  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',  date: '19.06.2026' },
-  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',  date: '20.06.2026' },
+  { event: 'Break Away Festival', location: 'Tampa, FL - USA',   date: '17.04.2026' },
+  { event: 'Ocean Club',          location: 'Marbella, SP',      date: '27.05.2026' },
+  { event: 'Plastik',             location: 'Ibiza, SP',         date: '30.05.2026' },
+  { event: 'Delta',               location: 'Tampa, FL - USA',   date: '04.06.2026' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '19.06.2026' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '20.06.2026' },
+  { event: 'House Hats',          location: 'Tampa, FL - USA',   date: '03.07.2026' },
+  { event: 'Crowd Control',       location: 'Tampa, FL - USA',   date: '04.07.2026' },
 ]
 
 export default function SetSchedulePage() {
@@ -26,7 +31,7 @@ export default function SetSchedulePage() {
           <p className="text-xs tracking-widest text-muted uppercase text-right">Date</p>
         </div>
 
-        <div className="mb-16">
+        <div className="mb-16 overflow-y-auto max-h-[480px] scrollbar-black">
           {schedule.map(({ event, location, date }) => (
             <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
               <p className="text-sm md:text-base tracking-widest text-white">{event}</p>

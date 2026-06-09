@@ -59,7 +59,7 @@ export default function ArtistPageClient({ artist }: Props) {
                   <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
                 </div>
                 <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black">
-                  {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore'].map((name) => (
+                  {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz'].map((name) => (
                     <div key={name} className="px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm tracking-widest text-white">
                       {name}
                     </div>
