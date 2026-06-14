@@ -13,8 +13,16 @@ interface Props {
   artist: Artist
 }
 
+const latestRelease = {
+  title: 'Rock the Rhythm (Extended)',
+  image: '/artists/SASH/rock-the-rhythm.jpg',
+  soundcloudUrl: 'https://soundcloud.com/therealsash/sash-rock-the-rhythm-extended?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+  spotifyUrl: '',
+}
+
 export default function ArtistPageClient({ artist }: Props) {
   const [streamOpen, setStreamOpen] = useState(false)
+  const [releaseOpen, setReleaseOpen] = useState(false)
 
   return (
     <>
@@ -211,12 +219,22 @@ export default function ArtistPageClient({ artist }: Props) {
             </button>
           </div>
           <div className="flex flex-wrap gap-6 items-start">
-            {/* Placeholder release card — replace with real image + link when ready */}
-            <div className="border border-border w-48 flex flex-col">
-              <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
-                <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
+            <button
+              onClick={() => setReleaseOpen(true)}
+              className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
+            >
+              <div className="relative w-48 h-48 overflow-hidden border-b border-border">
+                <Image
+                  src={latestRelease.image}
+                  alt={latestRelease.title}
+                  fill
+                  className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-            </div>
+              <div className="px-4 py-3">
+                <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
+              </div>
+            </button>
           </div>
         </div>
       </section>
@@ -241,6 +259,20 @@ export default function ArtistPageClient({ artist }: Props) {
             spotifyUrl: artist.spotifyUrl,
           }}
           onClose={() => setStreamOpen(false)}
+        />
+      )}
+
+      {/* Release Stream Modal */}
+      {releaseOpen && (
+        <StreamModal
+          artist={{
+            name: latestRelease.title,
+            instagramUrl: '',
+            tiktokUrl: '',
+            soundcloudUrl: latestRelease.soundcloudUrl,
+            spotifyUrl: latestRelease.spotifyUrl,
+          }}
+          onClose={() => setReleaseOpen(false)}
         />
       )}
     </>

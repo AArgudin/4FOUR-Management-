@@ -8,7 +8,8 @@
       "Read(//c/Users/AJ Argudin/AppData/Local/Programs//**)",
       "PowerShell(Get-Command node -ErrorAction SilentlyContinue; Get-Command npm -ErrorAction SilentlyContinue; if \\(-not \\(Get-Command node -ErrorAction SilentlyContinue\\)\\) { Write-Host \"Node not found in PATH\" })",
       "Bash(mkdir -p /Users/enriqueperezalonso/Helios/4FOUR-Management-/4FOUR-Management-/public)",
-      "Bash(cp \"/var/folders/yw/0z5zz0ds5zb794yy95ynnlhw0000gn/T/TemporaryItems/NSIRD_screencaptureui_Mg06tG/Screenshot 2026-04-24 at 12.25.44 PM.png\" /Users/enriqueperezalonso/Helios/4FOUR-Management-/4FOUR-Management-/public/logo.png)"
+      "Bash(cp \"/var/folders/yw/0z5zz0ds5zb794yy95ynnlhw0000gn/T/TemporaryItems/NSIRD_screencaptureui_Mg06tG/Screenshot 2026-04-24 at 12.25.44 PM.png\" /Users/enriqueperezalonso/Helios/4FOUR-Management-/4FOUR-Management-/public/logo.png)",
+      "mcp__visualize__read_me"
     ]
   }
 }
