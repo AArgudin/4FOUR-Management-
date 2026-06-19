@@ -78,15 +78,27 @@ export default async function HomePage() {
       <section id="artists" className="py-20 bg-black border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <p className="section-label mb-10">Artists</p>
-          <div className="flex flex-col gap-4 w-2/5 lg:w-1/4">
-            <ArtistFeatureCard
-              name="SASH"
-              role="DJ / Producer"
-              slug="sash"
-              artistImage="/artists/SASH/Artist-photo.jpeg"
-              logoImage="/artists/SASH/Artist-logo.png"
-              compact
-            />
+          <div className="flex flex-wrap gap-4 items-stretch">
+            <div className="w-2/5 lg:w-1/4 h-full">
+              <ArtistFeatureCard
+                name="SASH"
+                role="DJ / Producer"
+                slug="sash"
+                artistImage="/artists/SASH/Artist-photo.jpeg"
+                logoImage="/artists/SASH/Artist-logo.png"
+                compact
+              />
+            </div>
+            <div className="w-2/5 lg:w-1/4 h-full">
+              <ArtistFeatureCard
+                name="The Sound Of Musik"
+                role="DJ / Producer"
+                slug="the-sound-of-musik"
+                artistImage="/artists/The Sound of Musik/artist-image1.png"
+                logoImage="/artists/The Sound of Musik/artist-image1.png"
+                compact
+              />
+            </div>
           </div>
         </div>
       </section>

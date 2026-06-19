@@ -7,6 +7,7 @@ export const staticArtists: Artist[] = [
     slug: { current: 'sash' },
     role: 'DJ / Producer',
     portrait: null as any,
+    heroPhoto: '/artists/SASH/artist-photo2.jpg',
     bio: `Hailing from Tampa, Florida, Sash discovered his passion for DJing after a close friend bought a board—so he grabbed one too. What started as pure curiosity turned into a lifelong obsession during his first set: a late-night poker game inside a hurricane-damaged house, where the walls were stripped bare but the energy was alive. As his friends played cards, Sash mixed for hours, locked into the rhythm that would soon define him.
 
 Since that night, Sash has carved his way through Florida's house music scene with a contagious passion and relentless drive. Known for his tech house sound—groovy, high-energy, and built for the dance floor—he's earned opportunities supporting artists such as Wuki, Jake Shore, Dan Molinari, Ragie Ban, Fulano, and opening for DOD at The Ritz in Ybor City, a milestone moment that solidified his presence in larger rooms. Alongside these performances, Sash has built residencies across Tampa and Gainesville, including a residency at Bourbon Street in Gainesville, while performing at venues such as ECHO, LIT, EDEN, IVY, Cantina Añejo, Grove, DTF, MacDinton's, The Range, The White Buffalo, and Capone's. Each set has sharpened his craft and strengthened his reputation for commanding rooms with precision and energy.
@@ -18,6 +19,22 @@ Now establishing himself as both a DJ and producer, Sash is shaping a distinct i
     tiktokUrl: '',
     soundcloudUrl: 'https://on.soundcloud.com/2xRvF42qqcT4XDaWbl',
     spotifyUrl: 'https://open.spotify.com/user/92ff26afolmd08xcifn7xmkcz',
+    photos: [],
+    videos: [],
+    shows: [],
+  },
+  {
+    _id: 'the-sound-of-musik',
+    name: 'The Sound Of Musik',
+    slug: { current: 'the-sound-of-musik' },
+    role: 'DJ / Producer',
+    portrait: null as any,
+    heroPhoto: '/artists/The Sound of Musik/artist-image1.png',
+    bio: '',
+    instagramUrl: '',
+    tiktokUrl: '',
+    soundcloudUrl: '',
+    spotifyUrl: '',
     photos: [],
     videos: [],
     shows: [],

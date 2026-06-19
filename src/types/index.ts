@@ -4,6 +4,7 @@ export interface Artist {
   slug: { current: string }
   role: string
   portrait: SanityImage
+  heroPhoto?: string
   bio: string
   instagramUrl: string
   tiktokUrl: string

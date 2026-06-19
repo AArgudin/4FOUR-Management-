@@ -23,6 +23,7 @@ const latestRelease = {
 export default function ArtistPageClient({ artist }: Props) {
   const [streamOpen, setStreamOpen] = useState(false)
   const [releaseOpen, setReleaseOpen] = useState(false)
+  const isSash = artist.slug?.current === 'sash'
 
   return (
     <>
@@ -36,7 +37,7 @@ export default function ArtistPageClient({ artist }: Props) {
             {/* Image */}
             <div className="relative w-2/5 md:w-1/3 aspect-[3/4] md:aspect-auto md:min-h-[520px] overflow-hidden border border-border shrink-0">
               <Image
-                src={`/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
+                src={artist.heroPhoto || `/artists/${artist.slug?.current?.toUpperCase()}/artist-photo2.jpg`}
                 alt={artist.name}
                 fill
                 className="object-cover object-top grayscale"
@@ -62,7 +63,7 @@ export default function ArtistPageClient({ artist }: Props) {
               </div>
 
               {/* Supported artists */}
-              <div className="border border-border w-full md:w-fit md:min-w-[220px]">
+              {isSash && <div className="border border-border w-full md:w-fit md:min-w-[220px]">
                 <div className="px-3 py-2 md:px-5 md:py-3 border-b border-border">
                   <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
                 </div>
@@ -73,7 +74,7 @@ export default function ArtistPageClient({ artist }: Props) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div>}
             </div>
 
             {/* Bio — desktop only (3rd column) */}
@@ -219,22 +220,30 @@ export default function ArtistPageClient({ artist }: Props) {
             </button>
           </div>
           <div className="flex flex-wrap gap-6 items-start">
-            <button
-              onClick={() => setReleaseOpen(true)}
-              className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
-            >
-              <div className="relative w-48 h-48 overflow-hidden border-b border-border">
-                <Image
-                  src={latestRelease.image}
-                  alt={latestRelease.title}
-                  fill
-                  className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-500"
-                />
+            {isSash ? (
+              <button
+                onClick={() => setReleaseOpen(true)}
+                className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
+              >
+                <div className="relative w-48 h-48 overflow-hidden border-b border-border">
+                  <Image
+                    src={latestRelease.image}
+                    alt={latestRelease.title}
+                    fill
+                    className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
+                </div>
+              </button>
+            ) : (
+              <div className="border border-border w-48 flex flex-col">
+                <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
+                  <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
+                </div>
               </div>
-              <div className="px-4 py-3">
-                <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
-              </div>
-            </button>
+            )}
           </div>
         </div>
       </section>
