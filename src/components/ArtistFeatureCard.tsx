@@ -13,7 +13,7 @@ interface Props {
 export default function ArtistFeatureCard({ name, role, slug, artistImage, logoImage, compact }: Props) {
   return (
     <Link href={`/talent/${slug}`} className="group flex flex-col h-full border border-border hover:border-white transition-colors duration-300">
-      <div className={`flex flex-1 ${compact ? 'min-h-[120px]' : 'min-h-[280px]'}`}>
+      <div className={`flex ${compact ? 'h-[120px]' : 'h-[280px]'}`}>
 
         {/* Left 1/3 — Artist photo */}
         <div className="relative w-1/3 overflow-hidden">
@@ -39,7 +39,7 @@ export default function ArtistFeatureCard({ name, role, slug, artistImage, logoI
       </div>
 
       {/* Name + role bar */}
-      <div className="flex items-center justify-between px-5 py-4 border-t border-border min-h-[72px]">
+      <div className="flex items-center justify-between px-5 py-4 border-t border-border h-[88px]">
         <div>
           <p className="font-display text-xl tracking-widest">{name.toUpperCase()}</p>
           <p className="text-muted text-xs tracking-widest mt-0.5">{role.toUpperCase()}</p>
