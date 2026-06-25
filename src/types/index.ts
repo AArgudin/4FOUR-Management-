@@ -5,6 +5,7 @@ export interface Artist {
   role: string
   portrait: SanityImage
   heroPhoto?: string
+  supportedArtists?: string[]
   bio: string
   instagramUrl: string
   tiktokUrl: string

@@ -8,9 +8,10 @@ interface Props {
   artistImage: string
   logoImage: string
   compact?: boolean
+  invertLogo?: boolean
 }
 
-export default function ArtistFeatureCard({ name, role, slug, artistImage, logoImage, compact }: Props) {
+export default function ArtistFeatureCard({ name, role, slug, artistImage, logoImage, compact, invertLogo }: Props) {
   return (
     <Link href={`/talent/${slug}`} className="group flex flex-col h-full border border-border hover:border-white transition-colors duration-300">
       <div className={`flex ${compact ? 'h-[120px]' : 'h-[280px]'}`}>
@@ -27,12 +28,12 @@ export default function ArtistFeatureCard({ name, role, slug, artistImage, logoI
         </div>
 
         {/* Right 2/3 — Artist logo */}
-        <div className="relative w-2/3 bg-surface border-l border-border overflow-hidden">
+        <div className="relative w-2/3 bg-black border-l border-border overflow-hidden">
           <Image
             src={logoImage}
             alt={`${name} logo`}
             fill
-            className="object-cover"
+            className={`object-cover ${invertLogo ? 'invert' : ''}`}
           />
         </div>
 

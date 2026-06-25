@@ -62,47 +62,41 @@ export default function ArtistPageClient({ artist }: Props) {
                 </Link>
               </div>
 
-              {/* Supported Artists — non-SASH */}
-              {!isSash && (
+              {/* Supported artists — SASH hardcoded */}
+              {isSash && (
                 <div className="border border-border w-full md:w-fit md:min-w-[220px]">
                   <div className="px-3 py-2 md:px-5 md:py-3 border-b border-border">
                     <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
                   </div>
-                  <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black px-3 py-3 md:px-5 md:py-4">
-                    <p className="text-[10px] md:text-sm tracking-widest text-muted">Coming Soon</p>
+                  <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black">
+                    {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz'].map((name) => (
+                      <div key={name} className="px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm tracking-widest text-white">
+                        {name}
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
 
-              {/* Supported artists */}
-              {isSash && <div className="border border-border w-full md:w-fit md:min-w-[220px]">
-                <div className="px-3 py-2 md:px-5 md:py-3 border-b border-border">
-                  <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
+              {/* Supported artists — other artists */}
+              {!isSash && artist.supportedArtists && artist.supportedArtists.length > 0 && (
+                <div className="border border-border w-full md:w-fit md:min-w-[220px]">
+                  <div className="px-3 py-2 md:px-5 md:py-3 border-b border-border">
+                    <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
+                  </div>
+                  <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black">
+                    {artist.supportedArtists.map((name) => (
+                      <div key={name} className="px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm tracking-widest text-white">
+                        {name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black">
-                  {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz'].map((name) => (
-                    <div key={name} className="px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm tracking-widest text-white">
-                      {name}
-                    </div>
-                  ))}
-                </div>
-              </div>}
+              )}
             </div>
 
-            {/* Biography — desktop only (3rd column, non-SASH) */}
-            {!isSash && (
-              <div className="hidden md:flex w-[420px] shrink-0 border border-border flex-col">
-                <div className="px-5 py-4 border-b border-border">
-                  <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
-                </div>
-                <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-black">
-                  <p className="text-muted-2 text-xs leading-relaxed tracking-wide">Coming Soon</p>
-                </div>
-              </div>
-            )}
-
-            {/* Bio — desktop only (3rd column) */}
-            {artist.bio && (
+            {/* Biography — desktop only (3rd column) */}
+            {artist.bio ? (
               <div className="hidden md:flex w-[420px] shrink-0 border border-border flex-col">
                 <div className="px-5 py-4 border-b border-border">
                   <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
@@ -113,20 +107,17 @@ export default function ArtistPageClient({ artist }: Props) {
                   </p>
                 </div>
               </div>
+            ) : !isSash && (
+              <div className="hidden md:flex w-[420px] shrink-0 border border-border flex-col">
+                <div className="px-5 py-4 border-b border-border">
+                  <p className="text-xs tracking-widest text-muted uppercase">Biography</p>
+                </div>
+                <div className="flex-1 overflow-y-auto max-h-[480px] px-5 py-5 scrollbar-black">
+                  <p className="text-muted-2 text-xs leading-relaxed tracking-wide">Coming Soon</p>
+                </div>
+              </div>
             )}
           </div>
-
-          {/* Biography — mobile only (below the row, non-SASH) */}
-          {!isSash && (
-            <div className="md:hidden border border-border flex flex-col">
-              <div className="px-4 py-3 border-b border-border">
-                <p className="text-[10px] tracking-widest text-muted uppercase">Biography</p>
-              </div>
-              <div className="overflow-y-auto max-h-[200px] px-4 py-4 scrollbar-black">
-                <p className="text-muted-2 text-xs leading-relaxed tracking-wide">Coming Soon</p>
-              </div>
-            </div>
-          )}
 
           {/* Bio — mobile only (below the row) */}
           {artist.bio && (

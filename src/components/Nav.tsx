@@ -47,6 +47,18 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const handleMobileNav = (href: string) => {
+    setMenuOpen(false)
+    const hash = href.split('#')[1]
+    if (hash && pathname === '/') {
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    } else {
+      window.location.href = href
+    }
+  }
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
@@ -116,15 +128,14 @@ export default function Nav() {
           <div className="h-20 border-b border-border shrink-0" />
           <nav className="flex-1 flex flex-col justify-center items-center gap-8 px-6">
             {navLinks.map(link => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className={`font-display text-5xl tracking-widest transition-colors duration-200 ${
-                  pathname === link.href ? 'text-white' : 'text-muted hover:text-white'
-                }`}
+                onClick={(e) => { e.preventDefault(); handleMobileNav(link.href) }}
+                className="font-display text-5xl tracking-widest transition-colors duration-200 text-muted hover:text-white"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
           <div className="flex items-center justify-center gap-8 px-6 py-10 border-t border-border">

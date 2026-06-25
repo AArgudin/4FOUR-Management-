@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { client } from '@/lib/sanity'
+import { client, isSanityConfigured } from '@/lib/sanity'
 import { artistsQuery } from '@/lib/queries'
 import type { Artist } from '@/types'
 import ArtistFeatureCard from '@/components/ArtistFeatureCard'
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 async function getArtists(): Promise<Artist[]> {
+  if (!isSanityConfigured) return []
   try {
     return await client.fetch<Artist[]>(artistsQuery)
   } catch {

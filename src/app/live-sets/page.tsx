@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { client } from '@/lib/sanity'
+import { client, isSanityConfigured } from '@/lib/sanity'
 import { liveSetsQuery } from '@/lib/queries'
 import type { LiveSet } from '@/types'
 import LiveSetCard from '@/components/LiveSetCard'
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 async function getLiveSets(): Promise<LiveSet[]> {
+  if (!isSanityConfigured) return []
   try {
     return await client.fetch<LiveSet[]>(liveSetsQuery)
   } catch {

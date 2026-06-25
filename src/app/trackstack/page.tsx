@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { client } from '@/lib/sanity'
+import { client, isSanityConfigured } from '@/lib/sanity'
 import { siteSettingsQuery } from '@/lib/queries'
 import type { SiteSettings } from '@/types'
 
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 async function getSettings(): Promise<SiteSettings | null> {
+  if (!isSanityConfigured) return null
   try {
     return await client.fetch<SiteSettings>(siteSettingsQuery)
   } catch {

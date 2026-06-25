@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { client } from '@/lib/sanity'
+import { client, isSanityConfigured } from '@/lib/sanity'
 import { teamQuery } from '@/lib/queries'
 import type { TeamMember } from '@/types'
 import TeamCard from '@/components/TeamCard'
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 export const revalidate = 60
 
 async function getTeam(): Promise<TeamMember[]> {
+  if (!isSanityConfigured) return []
   try {
     return await client.fetch<TeamMember[]>(teamQuery)
   } catch {

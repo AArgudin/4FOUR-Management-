@@ -5,6 +5,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.sanity.io' },
       { protocol: 'https', hostname: 'img.youtube.com' },
     ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
   },
 }
 

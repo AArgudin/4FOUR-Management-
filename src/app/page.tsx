@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { client } from '@/lib/sanity'
+import { client, isSanityConfigured } from '@/lib/sanity'
 import { artistsQuery, teamQuery, siteSettingsQuery } from '@/lib/queries'
 import type { Artist, TeamMember, SiteSettings } from '@/types'
 import ArtistFeatureCard from '@/components/ArtistFeatureCard'
@@ -10,6 +10,7 @@ import LiveSetCarousel from '@/components/LiveSetCarousel'
 export const revalidate = 60
 
 async function getData() {
+  if (!isSanityConfigured) return { artists: [], team: [], settings: null }
   try {
     const [artists, team, settings] = await Promise.all([
       client.fetch<Artist[]>(artistsQuery),
@@ -91,11 +92,12 @@ export default async function HomePage() {
             </div>
             <div className="w-2/5 lg:w-1/4 h-full">
               <ArtistFeatureCard
-                name="The Sound Of Musik"
+                name="The Sound Of Muzik"
                 role="DJ / Producer"
                 slug="the-sound-of-musik"
-                artistImage="/artists/The Sound of Musik/artist-image1.png"
-                logoImage="/artists/The Sound of Musik/artist-image1.png"
+                artistImage="/artists/The Sound of Muzik/artist-image1.png"
+                logoImage="/artists/The Sound of Muzik/logo-image1.svg"
+                invertLogo
                 compact
               />
             </div>
