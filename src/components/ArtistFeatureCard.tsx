@@ -40,10 +40,10 @@ export default function ArtistFeatureCard({ name, role, slug, artistImage, logoI
       </div>
 
       {/* Name + role bar */}
-      <div className="flex items-center justify-between px-5 py-4 border-t border-border h-[88px]">
+      <div className="flex items-center justify-between px-3 md:px-5 py-4 border-t border-border h-[150px] md:h-[88px]">
         <div>
-          <p className="font-display text-xl tracking-widest">{name.toUpperCase()}</p>
-          <p className="text-muted text-xs tracking-widest mt-0.5">{role.toUpperCase()}</p>
+          <p className="font-display text-base md:text-xl tracking-widest">{name.toUpperCase()}</p>
+          <p className="text-muted text-[10px] md:text-xs tracking-widest mt-0.5">{role.toUpperCase()}</p>
         </div>
         <span className="text-muted group-hover:text-white transition-colors text-lg">→</span>
       </div>

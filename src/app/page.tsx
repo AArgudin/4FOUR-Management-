@@ -80,7 +80,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="section-label mb-10">Artists</p>
           <div className="flex flex-wrap gap-4 items-stretch">
-            <div className="w-2/5 lg:w-1/4 h-full">
+            <div className="w-1/2 md:w-2/5 lg:w-1/4 h-full">
               <ArtistFeatureCard
                 name="SASH"
                 role="DJ / Producer"
@@ -90,7 +90,7 @@ export default async function HomePage() {
                 compact
               />
             </div>
-            <div className="w-2/5 lg:w-1/4 h-full">
+            <div className="w-1/2 md:w-2/5 lg:w-1/4 h-full">
               <ArtistFeatureCard
                 name="The Sound Of Muzik"
                 role="DJ / Producer"
