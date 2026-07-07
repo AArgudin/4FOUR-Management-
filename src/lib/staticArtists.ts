@@ -31,7 +31,7 @@ Now establishing himself as both a DJ and producer, Sash is shaping a distinct i
     role: 'DJ / Producer',
     portrait: null as any,
     heroPhoto: '/artists/The Sound of Muzik/artist-image3.jpeg',
-    supportedArtists: ['Beltran', 'Chris Lorenzo', 'CID', 'Marco Strous', 'Cloonee'],
+    supportedArtists: ['Beltran', 'Chris Lorenzo', 'CID', 'Marco Strous', 'Cloonee', 'Ranger Trucco'],
     bio: `From St. Augustine, Florida, The Sound of Muzik is a DJ and producer focused on minimal deep tech and gritty tech house. His style mixes deep grooves, rolling basslines, and rap-inspired vocals to create a sound that is dark, energetic, and made for the dance floor.
 
 After starting his journey in August 2026, he has performed at clubs and events across Jacksonville, Gainesville, and Miami, building a reputation for high-energy sets and a strong connection with the crowd. Drawing inspiration from the underground scene, his goal is to keep his music simple, heavy, and unforgettable.

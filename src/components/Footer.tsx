@@ -1,13 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const navLinks = [
-  { href: '/talent', label: 'ARTISTS' },
-  { href: '/live-sets', label: 'LIVE SETS' },
-  { href: '/trackstack', label: 'TRACKSTACK' },
-  { href: '/team', label: 'TEAM' },
-  { href: '/contact', label: 'CONTACT' },
-]
 
 function InstagramIcon() {
   return (
@@ -69,18 +62,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right — nav links */}
-          <div className="flex flex-col gap-3 md:items-end justify-center">
-            {navLinks.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs tracking-widest text-muted hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center">
