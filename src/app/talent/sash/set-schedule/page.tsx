@@ -11,8 +11,13 @@ const schedule = [
   { event: 'Delta',               location: 'Tampa, FL - USA',   date: '04.06.2026' },
   { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '19.06.2026' },
   { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '20.06.2026' },
-  { event: 'House Hats',          location: 'Tampa, FL - USA',   date: '03.07.2026' },
-  { event: 'Crowd Control',       location: 'Tampa, FL - USA',   date: '04.07.2026' },
+  { event: 'House Hats',          location: 'Tampa, FL - USA',      date: '03.07.2026' },
+  { event: 'Crowd Control',       location: 'Tampa, FL - USA',      date: '04.07.2026' },
+  { event: 'No Sleep',            location: 'Tampa, FL',            date: '19.07.2026' },
+  { event: 'NOVA',                location: 'Tampa, FL',            date: '27.08.2026' },
+  { event: 'RITZ',                location: 'Tampa, FL',            date: '29.08.2026' },
+  { event: 'House Hats',          location: 'Gainesville, FL',      date: '11.09.2026' },
+  { event: 'SAE',                 location: 'Gainesville, FL',      date: '16.10.2026' },
 ]
 
 export default function SetSchedulePage() {
