@@ -5,7 +5,7 @@ export const metadata = {
 }
 
 const schedule = [
-  { event: 'Celine',        location: 'Orlando, FL',          date: '03.07.2026' },
+  { event: 'Celine',        location: 'Orlando, FL - USA',    date: '03.07.2026' },
   { event: 'Crowd Control', location: 'Gainesville, FL - USA', date: '23.08.2026' },
 ]
 

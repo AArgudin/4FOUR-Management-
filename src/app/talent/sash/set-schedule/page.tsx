@@ -15,6 +15,7 @@ const schedule = [
   { event: 'Crowd Control',       location: 'Tampa, FL - USA',      date: '04.07.2026' },
   { event: 'No Sleep',            location: 'Tampa, FL - USA',      date: '19.07.2026' },
   { event: 'NOVA',                location: 'Tampa, FL - USA',      date: '27.08.2026' },
+  { event: 'Metamorphosis',       location: 'Orlando, FL - USA',    date: '28.08.2026' },
   { event: 'RITZ',                location: 'Tampa, FL - USA',      date: '29.08.2026' },
   { event: 'House Hats',          location: 'Gainesville, FL - USA', date: '11.09.2026' },
   { event: 'SAE',                 location: 'Gainesville, FL - USA', date: '16.10.2026' },
