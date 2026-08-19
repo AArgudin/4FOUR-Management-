@@ -133,27 +133,49 @@ export default async function HomePage() {
                 TRACKSTACK
               </h2>
             </div>
-            {/* DJ card linking to Trackstack */}
-            <a
-              href="https://tstack.link/sash-VN-7tGKae0wc8rsX7L8GG"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-border hover:border-white transition-colors duration-300 w-56 shrink-0 md:mr-96"
-            >
-              <div className="relative w-56 h-28 overflow-hidden">
-                <Image
-                  src="/artists/SASH/artist-photo2.jpg"
-                  alt="SASH"
-                  fill
-                  className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
-              </div>
-              <div className="px-4 py-3 border-t border-border">
-                <p className="font-display text-lg tracking-widest">SASH</p>
-                <p className="text-muted text-xs tracking-widest mt-0.5">VIEW TRACKSTACK →</p>
-              </div>
-            </a>
+            {/* DJ cards */}
+            <div className="flex flex-wrap gap-4 shrink-0">
+              <a
+                href="https://tstack.link/sash-VN-7tGKae0wc8rsX7L8GG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-border hover:border-white transition-colors duration-300 w-56"
+              >
+                <div className="relative w-56 h-28 overflow-hidden">
+                  <Image
+                    src="/artists/SASH/artist-photo2.jpg"
+                    alt="SASH"
+                    fill
+                    className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+                <div className="px-4 py-3 border-t border-border">
+                  <p className="font-display text-lg tracking-widest">SASH</p>
+                  <p className="text-muted text-xs tracking-widest mt-0.5">VIEW TRACKSTACK →</p>
+                </div>
+              </a>
+              <a
+                href="https://tstack.link/the-sound-of-muzik-vG9yeHs0bi0Qy0uEBBKXw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border border-border hover:border-white transition-colors duration-300 w-56"
+              >
+                <div className="relative w-56 h-28 overflow-hidden">
+                  <Image
+                    src="/artists/The Sound of Muzik/artist-image1.png"
+                    alt="The Sound Of Muzik"
+                    fill
+                    className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+                <div className="px-4 py-3 border-t border-border">
+                  <p className="font-display text-lg tracking-widest">THE SOUND OF MUZIK</p>
+                  <p className="text-muted text-xs tracking-widest mt-0.5">VIEW TRACKSTACK →</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
