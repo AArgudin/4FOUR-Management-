@@ -42,18 +42,18 @@ export default function SetSchedulePage() {
 
         <div className="mb-16 overflow-y-auto max-h-[480px] scrollbar-black">
           {schedule.map(({ event, location, date, support, headline }) => (
-            <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
+            <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-3 md:py-6 px-1 md:px-2 border-b border-border/30">
               <div>
-                <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
+                <p className="text-[10px] md:text-base tracking-tight md:tracking-widest text-white leading-tight">{event}</p>
                 {support && (
-                  <p className="text-[10px] tracking-widest text-muted mt-1">Support for {support}</p>
+                  <p className="text-[8px] md:text-[10px] tracking-tight md:tracking-widest text-muted mt-0.5">Support for {support}</p>
                 )}
                 {headline && (
-                  <p className="text-[10px] tracking-widest text-muted mt-1">Headline</p>
+                  <p className="text-[8px] md:text-[10px] tracking-tight md:tracking-widest text-muted mt-0.5">Headline</p>
                 )}
               </div>
-              <p className="text-sm md:text-base tracking-widest text-muted-2 text-center">{location}</p>
-              <p className="text-sm md:text-base tracking-widest text-muted text-right">{date}</p>
+              <p className="text-[9px] md:text-base tracking-tight md:tracking-widest text-muted-2 text-center leading-tight">{location}</p>
+              <p className="text-[9px] md:text-base tracking-tight md:tracking-widest text-muted text-right leading-tight">{date}</p>
             </div>
           ))}
         </div>
