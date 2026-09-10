@@ -69,7 +69,7 @@ export default function ArtistPageClient({ artist }: Props) {
                     <p className="text-[10px] md:text-xs tracking-widest text-white font-bold uppercase">Supported Artists</p>
                   </div>
                   <div className="overflow-y-auto max-h-[130px] md:max-h-[180px] scrollbar-black">
-                    {['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz', 'Joshwa', 'Tyke', 'Chasewest', 'Slugg'].map((name) => (
+                    {['Marco Carola', 'Paco Ozuna', 'Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz', 'Joshwa', 'Tyke', 'Chasewest', 'Slugg', 'Nic Vans', 'Calussa', 'Ayybo', 'Murda Beats', 'Jay Crusoe'].map((name) => (
                       <div key={name} className="px-3 py-1.5 md:px-5 md:py-3 text-[10px] md:text-sm tracking-widest text-white">
                         {name}
                       </div>
@@ -247,30 +247,11 @@ export default function ArtistPageClient({ artist }: Props) {
             </button>
           </div>
           <div className="flex flex-wrap gap-6 items-start">
-            {isSash ? (
-              <button
-                onClick={() => setReleaseOpen(true)}
-                className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
-              >
-                <div className="relative w-48 h-48 overflow-hidden border-b border-border">
-                  <Image
-                    src={latestRelease.image}
-                    alt={latestRelease.title}
-                    fill
-                    className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="px-4 py-3">
-                  <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
-                </div>
-              </button>
-            ) : (
-              <div className="border border-border w-48 flex flex-col">
-                <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
-                  <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
-                </div>
+            <div className="border border-border w-48 flex flex-col">
+              <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
+                <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
