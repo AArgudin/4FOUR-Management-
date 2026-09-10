@@ -85,7 +85,7 @@ export default async function HomePage() {
                 name="SASH"
                 role="DJ / Producer"
                 slug="sash"
-                artistImage="/artists/SASH/Artist-photo.jpeg"
+                artistImage="/artists/SASH/artist-photo3.jpg"
                 logoImage="/artists/SASH/Artist-logo.png"
                 compact
               />
@@ -143,7 +143,7 @@ export default async function HomePage() {
               >
                 <div className="relative w-56 h-28 overflow-hidden">
                   <Image
-                    src="/artists/SASH/artist-photo2.jpg"
+                    src="/artists/SASH/artist-photo5.jpg"
                     alt="SASH"
                     fill
                     className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"

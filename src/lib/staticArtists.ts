@@ -7,7 +7,7 @@ export const staticArtists: Artist[] = [
     slug: { current: 'sash' },
     role: 'DJ / Producer',
     portrait: null as any,
-    heroPhoto: '/artists/SASH/artist-photo2.jpg',
+    heroPhoto: '/artists/SASH/artist-photo3.jpg',
     supportedArtists: ['Dedro', 'Dan Molinari', 'Ragie Ban', 'D.O.D.', 'Wuki', 'Jakeshore', 'Pedroz'],
     bio: `Hailing from Tampa, Florida, Sash discovered his passion for DJing after a close friend bought a board—so he grabbed one too. What started as pure curiosity turned into a lifelong obsession during his first set: a late-night poker game inside a hurricane-damaged house, where the walls were stripped bare but the energy was alive. As his friends played cards, Sash mixed for hours, locked into the rhythm that would soon define him.
 

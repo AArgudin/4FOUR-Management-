@@ -5,20 +5,23 @@ export const metadata = {
 }
 
 const schedule = [
-  { event: 'Break Away Festival', location: 'Tampa, FL - USA',   date: '17.04.2026' },
-  { event: 'Ocean Club',          location: 'Marbella, SP',      date: '27.05.2026' },
-  { event: 'Plastik',             location: 'Ibiza, SP',         date: '30.05.2026' },
-  { event: 'Delta',               location: 'Tampa, FL - USA',   date: '04.06.2026' },
-  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '19.06.2026' },
-  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA', date: '20.06.2026' },
-  { event: 'House Hats',          location: 'Tampa, FL - USA',      date: '03.07.2026' },
-  { event: 'Crowd Control',       location: 'Tampa, FL - USA',      date: '04.07.2026' },
-  { event: 'No Sleep',            location: 'Tampa, FL - USA',      date: '19.07.2026' },
-  { event: 'NOVA',                location: 'Tampa, FL - USA',      date: '27.08.2026' },
-  { event: 'Metamorphosis',       location: 'Orlando, FL - USA',    date: '28.08.2026' },
-  { event: 'RITZ',                location: 'Tampa, FL - USA',      date: '29.08.2026' },
-  { event: 'House Hats',          location: 'Gainesville, FL - USA', date: '11.09.2026' },
-  { event: 'SAE',                 location: 'Gainesville, FL - USA', date: '16.10.2026' },
+  { event: 'Break Away Festival', location: 'Tampa, FL - USA',      date: '17.04.2026' },
+  { event: 'Ocean Club',          location: 'Marbella, SP',         date: '27.05.2026' },
+  { event: 'Plastik',             location: 'Ibiza, SP',            date: '30.05.2026' },
+  { event: 'Delta',               location: 'Tampa, FL - USA',      date: '04.06.2026', support: 'Pedroz' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',    date: '19.06.2026' },
+  { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',    date: '20.06.2026' },
+  { event: 'House Hats',          location: 'Tampa, FL - USA',      date: '03.07.2026', support: 'Tyke' },
+  { event: 'Crowd Control',       location: 'Tampa, FL - USA',      date: '04.07.2026', support: 'Chase West & Slugg' },
+  { event: 'No Sleep',            location: 'Tampa, FL - USA',       date: '19.07.2026', support: 'Jordan Brando' },
+  { event: '511 Franklin',        location: 'Tampa, FL - USA',       date: '27.08.2026', support: 'Jay Crusoe' },
+  { event: 'NOVA',                location: 'Tampa, FL - USA',       date: '27.08.2026', support: 'Adam Sellouk' },
+  { event: 'Metamorphosis',       location: 'Orlando, FL - USA',     date: '28.08.2026' },
+  { event: 'The Ritz Ybor',       location: 'Tampa, FL - USA',       date: '29.08.2026', support: 'Nic Vanz' },
+  { event: 'Cantina Añejo',       location: 'Gainesville, FL - USA', date: '10.09.2026', support: 'Sem Jacobs' },
+  { event: 'ATO Volcano',         location: 'Gainesville, FL - USA', date: '11.09.2026', headline: true },
+  { event: 'House Hats',          location: 'Gainesville, FL - USA', date: '11.09.2026', support: 'Ayybo' },
+  { event: 'SAE',                 location: 'Gainesville, FL - USA', date: '16.10.2026', support: 'Riordan' },
 ]
 
 export default function SetSchedulePage() {
@@ -38,9 +41,17 @@ export default function SetSchedulePage() {
         </div>
 
         <div className="mb-16 overflow-y-auto max-h-[480px] scrollbar-black">
-          {schedule.map(({ event, location, date }) => (
+          {schedule.map(({ event, location, date, support, headline }) => (
             <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
-              <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
+              <div>
+                <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
+                {support && (
+                  <p className="text-[10px] tracking-widest text-muted mt-1">Support for {support}</p>
+                )}
+                {headline && (
+                  <p className="text-[10px] tracking-widest text-muted mt-1">Headline</p>
+                )}
+              </div>
               <p className="text-sm md:text-base tracking-widest text-muted-2 text-center">{location}</p>
               <p className="text-sm md:text-base tracking-widest text-muted text-right">{date}</p>
             </div>

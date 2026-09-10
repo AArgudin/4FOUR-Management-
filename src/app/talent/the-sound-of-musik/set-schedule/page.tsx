@@ -5,8 +5,10 @@ export const metadata = {
 }
 
 const schedule = [
-  { event: 'Celine',        location: 'Orlando, FL - USA',    date: '03.07.2026' },
+  { event: 'Celine',        location: 'Orlando, FL - USA',     date: '03.07.2026', support: 'Ranger Trucco' },
   { event: 'Crowd Control', location: 'Gainesville, FL - USA', date: '23.08.2026' },
+  { event: 'Crowd Control', location: 'Gainesville, FL - USA', date: '28.08.2026', support: 'Slugg' },
+  { event: 'Cantina Añejo', location: 'Gainesville, FL - USA', date: '10.09.2026', support: 'Sem Jacobs' },
 ]
 
 export default function SetSchedulePage() {
@@ -26,9 +28,14 @@ export default function SetSchedulePage() {
         </div>
 
         <div className="mb-16 overflow-y-auto max-h-[480px] scrollbar-black">
-          {schedule.map(({ event, location, date }) => (
+          {schedule.map(({ event, location, date, support }) => (
             <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-6 px-2">
-              <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
+              <div>
+                <p className="text-sm md:text-base tracking-widest text-white">{event}</p>
+                {support && (
+                  <p className="text-[10px] tracking-widest text-muted mt-1">Support for {support}</p>
+                )}
+              </div>
               <p className="text-sm md:text-base tracking-widest text-muted-2 text-center">{location}</p>
               <p className="text-sm md:text-base tracking-widest text-muted text-right">{date}</p>
             </div>
