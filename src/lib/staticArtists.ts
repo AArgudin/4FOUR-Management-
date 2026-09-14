@@ -20,6 +20,8 @@ Now establishing himself as both a DJ and producer, Sash is shaping a distinct i
     tiktokUrl: '',
     soundcloudUrl: 'https://on.soundcloud.com/2xRvF42qqcT4XDaWbl',
     spotifyUrl: 'https://open.spotify.com/user/92ff26afolmd08xcifn7xmkcz',
+    appleMusicUrl: 'https://music.apple.com/us/artist/sash/6810368155',
+    youtubeUrl: 'https://music.youtube.com/channel/UCCOsOfjHKRJQ5Rc2b-XxEew',
     photos: [],
     videos: [],
     shows: [],
