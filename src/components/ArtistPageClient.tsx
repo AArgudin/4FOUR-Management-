@@ -14,9 +14,9 @@ interface Props {
 }
 
 const latestRelease = {
-  title: 'Rock the Rhythm (Extended)',
-  image: '/artists/SASH/rock-the-rhythm.jpg',
-  soundcloudUrl: 'https://soundcloud.com/therealsash/sash-rock-the-rhythm-extended?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+  title: 'SASH EP1',
+  image: '/artists/SASH/SASH-EP1.png',
+  soundcloudUrl: '',
   spotifyUrl: '',
 }
 
@@ -247,11 +247,30 @@ export default function ArtistPageClient({ artist }: Props) {
             </button>
           </div>
           <div className="flex flex-wrap gap-6 items-start">
-            <div className="border border-border w-48 flex flex-col">
-              <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
-                <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
+            {isSash ? (
+              <button
+                onClick={() => setReleaseOpen(true)}
+                className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
+              >
+                <div className="relative w-48 h-48 overflow-hidden border-b border-border">
+                  <Image
+                    src={latestRelease.image}
+                    alt={latestRelease.title}
+                    fill
+                    className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
+                </div>
+              </button>
+            ) : (
+              <div className="border border-border w-48 flex flex-col">
+                <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
+                  <p className="text-muted text-xs tracking-widest text-center px-4">No new releases out yet</p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
