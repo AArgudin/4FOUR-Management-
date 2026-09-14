@@ -14,15 +14,16 @@ interface Props {
 }
 
 const latestRelease = {
-  title: 'SASH EP1',
+  title: 'SW10th ST',
   image: '/artists/SASH/SASH-EP1.png',
-  soundcloudUrl: '',
-  spotifyUrl: '',
+  spotifyUrl: 'https://open.spotify.com/album/1OII8Pedv7V7w1m2x2F5xW',
+  appleMusicUrl: 'https://music.apple.com/us/album/sw10th-ep/6810460122',
+  soundcloudUrl: 'https://on.soundcloud.com/yA8R9w57KASnX5xFCe',
+  youtubeUrl: 'https://music.youtube.com/playlist?list=OLAK5uy_mc1xAXc1xO0JIYS0F4Bid2NqIX1ZrIBWM',
 }
 
 export default function ArtistPageClient({ artist }: Props) {
   const [streamOpen, setStreamOpen] = useState(false)
-  const [releaseOpen, setReleaseOpen] = useState(false)
   const isSash = artist.slug?.current === 'sash'
 
   return (
@@ -248,10 +249,7 @@ export default function ArtistPageClient({ artist }: Props) {
           </div>
           <div className="flex flex-wrap gap-6 items-start">
             {isSash ? (
-              <button
-                onClick={() => setReleaseOpen(true)}
-                className="group border border-border hover:border-white transition-colors w-48 flex flex-col text-left"
-              >
+              <div className="group relative border border-border hover:border-white transition-colors w-48 flex flex-col overflow-hidden">
                 <div className="relative w-48 h-48 overflow-hidden border-b border-border">
                   <Image
                     src={latestRelease.image}
@@ -263,7 +261,22 @@ export default function ArtistPageClient({ artist }: Props) {
                 <div className="px-4 py-3">
                   <p className="text-white text-xs tracking-widest uppercase">{latestRelease.title}</p>
                 </div>
-              </button>
+                {/* Hover overlay with platform links */}
+                <div className="absolute inset-0 bg-black/95 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href={latestRelease.spotifyUrl} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Spotify">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                  </a>
+                  <a href={latestRelease.appleMusicUrl} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="Apple Music">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                  </a>
+                  <a href={latestRelease.soundcloudUrl} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="SoundCloud">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.015.108-.024.217-.024.33 0 1.333 1.075 2.42 2.404 2.42.15 0 .295-.015.438-.042H20.32c.95-.06 1.695-.848 1.695-1.818 0-.852-.578-1.566-1.37-1.765.043-.184.065-.376.065-.572 0-1.433-1.155-2.595-2.58-2.595-.195 0-.385.022-.568.063C17.19 6.9 15.773 5.7 14.07 5.7c-1.643 0-3.032 1.15-3.43 2.7-.27-.12-.57-.19-.886-.19-1.293 0-2.344 1.056-2.344 2.358 0 .055.003.11.007.163C6.625 10.646 5.9 11.36 5.9 12.246c0 .668.364 1.248.9 1.556L5.9 12.22l.003.004a2.16 2.16 0 0 1-.21-.958c0-1.2.97-2.18 2.162-2.18.136 0 .27.013.4.038.028-.04.058-.077.09-.113C8.716 7.92 10.19 6.9 11.9 6.9c1.59 0 2.972.914 3.654 2.245.18-.05.37-.077.565-.077 1.065 0 1.928.868 1.928 1.938 0 .21-.034.413-.095.603.476.21.807.692.807 1.25 0 .755-.61 1.365-1.363 1.365H3.67c-.012 0-.024 0-.036-.002a1.43 1.43 0 0 1-.45-.077A1.442 1.442 0 0 1 2.2 12.78a1.44 1.44 0 0 1-.188-.383 1.434 1.434 0 0 1-.054-.358c0-.395.16-.753.418-1.014l-.201.2z"/></svg>
+                  </a>
+                  <a href={latestRelease.youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-white transition-colors" aria-label="YouTube Music">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  </a>
+                </div>
+              </div>
             ) : (
               <div className="border border-border w-48 flex flex-col">
                 <div className="w-48 h-48 bg-surface flex items-center justify-center border-b border-border">
@@ -298,19 +311,6 @@ export default function ArtistPageClient({ artist }: Props) {
         />
       )}
 
-      {/* Release Stream Modal */}
-      {releaseOpen && (
-        <StreamModal
-          artist={{
-            name: latestRelease.title,
-            instagramUrl: '',
-            tiktokUrl: '',
-            soundcloudUrl: latestRelease.soundcloudUrl,
-            spotifyUrl: latestRelease.spotifyUrl,
-          }}
-          onClose={() => setReleaseOpen(false)}
-        />
-      )}
     </>
   )
 }
