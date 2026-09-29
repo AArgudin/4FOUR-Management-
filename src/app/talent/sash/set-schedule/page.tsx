@@ -21,6 +21,7 @@ const schedule = [
   { event: 'Cantina Añejo',       location: 'Gainesville, FL - USA', date: '10.09.2026', support: 'Sem Jacobs' },
   { event: 'ATO Volcano',         location: 'Gainesville, FL - USA', date: '11.09.2026', headline: true },
   { event: 'House Hats',          location: 'Gainesville, FL - USA', date: '11.09.2026', support: 'Ayybo' },
+  { event: 'Cantina Añejo',       location: 'Gainesville, FL - USA', date: '06.10.2026', support: 'Welker' },
   { event: 'SAE',                 location: 'Gainesville, FL - USA', date: '16.10.2026', support: 'Riordan' },
 ]
 
