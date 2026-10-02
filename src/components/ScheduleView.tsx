@@ -25,34 +25,42 @@ function parseDate(dateStr: string) {
 
 export default function ScheduleView({ schedule, artistName, backHref }: Props) {
   const months = useMemo(() => {
-    const seen = new Set<string>()
-    const result: { key: string; month: number; year: number; label: string }[] = []
+    const now = new Date()
+    // Start from the earliest show month (or current month if no past shows)
+    let startYear = now.getFullYear()
+    let startMonth = now.getMonth() + 1
     for (const show of schedule) {
       const { month, year } = parseDate(show.date)
-      const key = `${year}-${month}`
-      if (!seen.has(key)) {
-        seen.add(key)
-        result.push({ key, month, year, label: `${MONTHS[month - 1]} ${year}` })
+      if (year < startYear || (year === startYear && month < startMonth)) {
+        startYear = year
+        startMonth = month
       }
     }
-    return result.sort((a, b) => a.year !== b.year ? a.year - b.year : a.month - b.month)
+    // End 12 months from now
+    const endDate = new Date(now.getFullYear(), now.getMonth() + 12, 1)
+    const endYear = endDate.getFullYear()
+    const endMonth = endDate.getMonth() + 1
+
+    const result: { key: string; month: number; year: number; label: string }[] = []
+    let y = startYear
+    let m = startMonth
+    while (y < endYear || (y === endYear && m <= endMonth)) {
+      result.push({ key: `${y}-${m}`, month: m, year: y, label: `${MONTHS[m - 1]} ${y}` })
+      m++
+      if (m > 12) { m = 1; y++ }
+    }
+    return result
   }, [schedule])
 
-  const defaultMonth = useMemo(() => {
+  const defaultIndex = useMemo(() => {
     const now = new Date()
     const currentYear = now.getFullYear()
     const currentMonth = now.getMonth() + 1
-    const exact = months.find(m => m.year === currentYear && m.month === currentMonth)
-    if (exact) return exact.key
-    const future = months.find(m => m.year > currentYear || (m.year === currentYear && m.month > currentMonth))
-    if (future) return future.key
-    return months[months.length - 1]?.key ?? ''
+    const idx = months.findIndex(m => m.year === currentYear && m.month === currentMonth)
+    return idx >= 0 ? idx : 0
   }, [months])
 
-  const [selectedIndex, setSelectedIndex] = useState(() => {
-    const idx = months.findIndex(m => m.key === defaultMonth)
-    return idx >= 0 ? idx : 0
-  })
+  const [selectedIndex, setSelectedIndex] = useState(defaultIndex)
 
   const selectedKey = months[selectedIndex]?.key ?? ''
 
