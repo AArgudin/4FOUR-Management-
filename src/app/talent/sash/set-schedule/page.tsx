@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ScheduleView from '@/components/ScheduleView'
 
 export const metadata = {
   title: 'Set Schedule | SASH',
@@ -13,56 +13,20 @@ const schedule = [
   { event: 'Lakeshore Festival',  location: 'Chicago, IL - USA',    date: '20.06.2026' },
   { event: 'House Hats',          location: 'Tampa, FL - USA',      date: '03.07.2026', support: 'Tyke' },
   { event: 'Crowd Control',       location: 'Tampa, FL - USA',      date: '04.07.2026', support: 'Chase West & Slugg' },
-  { event: 'No Sleep',            location: 'Tampa, FL - USA',       date: '19.07.2026', support: 'Jordan Brando' },
-  { event: '511 Franklin',        location: 'Tampa, FL - USA',       date: '27.08.2026', support: 'Jay Crusoe' },
-  { event: 'NOVA',                location: 'Tampa, FL - USA',       date: '27.08.2026', support: 'Adam Sellouk' },
-  { event: 'Metamorphosis',       location: 'Orlando, FL - USA',     date: '28.08.2026' },
-  { event: 'The Ritz Ybor',       location: 'Tampa, FL - USA',       date: '29.08.2026', support: 'Nic Vanz' },
+  { event: 'No Sleep',            location: 'Tampa, FL - USA',      date: '19.07.2026', support: 'Jordan Brando' },
+  { event: '511 Franklin',        location: 'Tampa, FL - USA',      date: '27.08.2026', support: 'Jay Crusoe' },
+  { event: 'NOVA',                location: 'Tampa, FL - USA',      date: '27.08.2026', support: 'Adam Sellouk' },
+  { event: 'Metamorphosis',       location: 'Orlando, FL - USA',    date: '28.08.2026' },
+  { event: 'The Ritz Ybor',       location: 'Tampa, FL - USA',      date: '29.08.2026', support: 'Nic Vanz' },
   { event: 'Cantina Añejo',       location: 'Gainesville, FL - USA', date: '10.09.2026', support: 'Sem Jacobs' },
   { event: 'ATO Volcano',         location: 'Gainesville, FL - USA', date: '11.09.2026', headline: true },
   { event: 'House Hats',          location: 'Gainesville, FL - USA', date: '11.09.2026', support: 'Ayybo' },
+  { event: 'Vivid Music Hall',    location: 'Gainesville, FL - USA', date: '03.10.2026', support: 'Murda Beatz' },
   { event: 'Cantina Añejo',       location: 'Gainesville, FL - USA', date: '06.10.2026', support: 'Welker' },
+  { event: 'The Woods',           location: 'Lake City, FL - USA',   date: '07.10.2026', support: 'ChaseWest' },
   { event: 'SAE',                 location: 'Gainesville, FL - USA', date: '16.10.2026', support: 'Riordan' },
 ]
 
 export default function SetSchedulePage() {
-  return (
-    <section className="pt-20 min-h-screen bg-black">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <p className="section-label mb-4">SASH</p>
-        <h1 className="font-display text-[clamp(2.5rem,8vw,6rem)] leading-none tracking-widest mb-16">
-          SET SCHEDULE
-        </h1>
-
-        {/* Header row */}
-        <div className="grid grid-cols-3 px-2 pb-3 border-b border-border">
-          <p className="text-xs tracking-widest text-muted uppercase">Event</p>
-          <p className="text-xs tracking-widest text-muted uppercase text-center">Location</p>
-          <p className="text-xs tracking-widest text-muted uppercase text-right">Date</p>
-        </div>
-
-        <div className="mb-16 overflow-y-auto max-h-[480px] scrollbar-black">
-          {schedule.map(({ event, location, date, support, headline }) => (
-            <div key={`${event}-${date}`} className="grid grid-cols-3 items-center py-3 md:py-6 px-1 md:px-2 border-b border-border/30">
-              <div>
-                <p className="text-[10px] md:text-base tracking-tight md:tracking-widest text-white leading-tight">{event}</p>
-                {support && (
-                  <p className="text-[8px] md:text-[10px] tracking-tight md:tracking-widest text-muted mt-0.5">Support for {support}</p>
-                )}
-                {headline && (
-                  <p className="text-[8px] md:text-[10px] tracking-tight md:tracking-widest text-muted mt-0.5">Headline</p>
-                )}
-              </div>
-              <p className="text-[9px] md:text-base tracking-tight md:tracking-widest text-muted-2 text-center leading-tight">{location}</p>
-              <p className="text-[9px] md:text-base tracking-tight md:tracking-widest text-muted text-right leading-tight">{date}</p>
-            </div>
-          ))}
-        </div>
-
-        <Link href="/talent/sash" className="text-xs tracking-widest text-muted hover:text-white transition-colors">
-          ← Back to SASH
-        </Link>
-      </div>
-    </section>
-  )
+  return <ScheduleView schedule={schedule} artistName="SASH" backHref="/talent/sash" />
 }
